@@ -2,7 +2,7 @@
 / {
     chosen {
         zmk,kscan = &kscan0;
-        zmk,matrix-transform = &default_transform;
+        zmk,matrix-transform = &cust_transform;
     };
 
     kscan0: kscan {
@@ -23,7 +23,7 @@
         <&gpio1 9 GPIO_ACTIVE_HIGH>;
     };
 
-    default_transform: matrix_transform {
+    cust_transform: matrix_transform {
         compatible = "zmk,matrix-transform";
         rows = <7>;
         columns = <5>;
