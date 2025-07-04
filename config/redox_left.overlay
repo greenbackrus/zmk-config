@@ -5,10 +5,9 @@
         zmk,matrix-transform = &cust_transform;
     };
 
-    /delete-node/ kscan0;
-
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
+        wakeup-source;
         diode-direction = "row2col";
         row-gpios = <&gpio1 20 GPIO_ACTIVE_HIGH>,
         <&gpio1 19 GPIO_ACTIVE_HIGH>,
