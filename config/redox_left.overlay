@@ -21,7 +21,7 @@
         <&gpio1 8 GPIO_ACTIVE_HIGH>,
         <&gpio1 9 GPIO_ACTIVE_HIGH>;
     };
-
+    #include <dt-bindings/zmk/matrix_transform.h>
     default_transform: matrix_transform {
         compatible = "zmk,matrix-transform";
         rows = <7>;
