@@ -21,23 +21,23 @@
              * Ряды: 1-5 (сверху вниз)
              * 
              * ┌───┬───┬───┬───┬───┬───┬───┐
-             * │ 6 │ 5 │ 4 │ 3 │ 2 │ 1 │   │  <- Ряд 1
+             * │ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │   │  <- Ряд 1
              * ├───┼───┼───┼───┼───┼───┤   │
-             * │ T │ R │ E │ W │ Q │TAB│   │  <- Ряд 2
+             * │TAB│ Q │ W │ E │ R │ T │   │  <- Ряд 2 (QWERTY)
              * ├───┼───┼───┼───┼───┼───┤   │
-             * │ G │ F │ D │ S │ A │ALT│   │  <- Ряд 3
+             * │ALT│ A │ S │ D │ F │ G │   │  <- Ряд 3 (QWERTY)
              * ├───┼───┼───┼───┼───┼───┤   │
-             * │ B │ V │ C │ X │ Z │CTL│   │  <- Ряд 4
+             * │CTL│ Z │ X │ C │ V │ B │SFT│  <- Ряд 4 (QWERTY, с дополнительной кнопкой)
              * ├───┼───┼───┼───┼───┼───┤   │
              * │   │   │   │   │DEL│ESC│SFT│  <- Ряд 5 (островок)
              * └───┴───┴───┴───┴───┴───┴───┘
              *   1   2   3   4   5   6   7
              */
             bindings = <
-                &kp N6    &kp N5    &kp N4    &kp N3    &kp N2    &kp N1    &trans
-                &kp T     &kp R     &kp E     &kp W     &kp Q     &kp TAB   &trans
-                &kp G     &kp F     &kp D     &kp S     &kp A     &kp LALT  &trans
-                &kp B     &kp V     &kp C     &kp X     &kp Z     &kp LCTRL &kp LSHFT
+                &kp N1    &kp N2    &kp N3    &kp N4    &kp N5    &kp N6    &trans
+                &kp TAB   &kp Q     &kp W     &kp E     &kp R     &kp T     &trans
+                &kp LALT  &kp A     &kp S     &kp D     &kp F     &kp G     &trans
+                &kp LCTRL &kp Z     &kp X     &kp C     &kp V     &kp B     &kp LSHFT
                 &trans    &trans    &trans    &trans    &kp DEL   &kp ESC   &kp LSHFT
             >;
         };
@@ -111,4 +111,4 @@
             >;
         };
     };
-};
+}; 

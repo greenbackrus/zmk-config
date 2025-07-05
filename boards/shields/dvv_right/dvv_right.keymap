@@ -16,29 +16,29 @@
 
         default_layer {
             /*
-             * Левая половинка клавиатуры (7x5)
+             * Правая половинка клавиатуры (7x5)
              * Столбцы: 1-7 (от центра к краям)
              * Ряды: 1-5 (сверху вниз)
              * 
              * ┌───┬───┬───┬───┬───┬───┬───┐
-             * │ 6 │ 5 │ 4 │ 3 │ 2 │ 1 │   │  <- Ряд 1
+             * │ 7 │ 8 │ 9 │ 0 │ - │ = │UN1│  <- Ряд 1 (UN1 = неиспользованная позиция 7,1)
              * ├───┼───┼───┼───┼───┼───┤   │
-             * │ T │ R │ E │ W │ Q │TAB│   │  <- Ряд 2
+             * │ Y │ U │ I │ O │ P │ [ │ ] │  <- Ряд 2
              * ├───┼───┼───┼───┼───┼───┤   │
-             * │ G │ F │ D │ S │ A │ALT│   │  <- Ряд 3
+             * │ H │ J │ K │ L │ ; │ ' │UN3│  <- Ряд 3 (UN3 = неиспользованная позиция 7,3)
              * ├───┼───┼───┼───┼───┼───┤   │
-             * │ B │ V │ C │ X │ Z │CTL│   │  <- Ряд 4
+             * │ N │ M │ , │ . │ / │L1 │UN4│  <- Ряд 4 (L1 = слой 1, позиция 6,4)
              * ├───┼───┼───┼───┼───┼───┤   │
-             * │   │   │   │   │DEL│ESC│SFT│  <- Ряд 5 (островок)
+             * │L2 │UN5│UN5│UN5│BSP│ENT│L3 │  <- Ряд 5 (островок, L2 = слой 2, L3 = слой 3)
              * └───┴───┴───┴───┴───┴───┴───┘
              *   1   2   3   4   5   6   7
              */
             bindings = <
-                &kp N6    &kp N5    &kp N4    &kp N3    &kp N2    &kp N1    &trans
-                &kp T     &kp R     &kp E     &kp W     &kp Q     &kp TAB   &trans
-                &kp G     &kp F     &kp D     &kp S     &kp A     &kp LALT  &trans
-                &kp B     &kp V     &kp C     &kp X     &kp Z     &kp LCTRL &kp LSHFT
-                &trans    &trans    &trans    &trans    &kp DEL   &kp ESC   &kp LSHFT
+                &kp N7    &kp N8    &kp N9    &kp N0    &kp MINUS &kp EQUAL &trans    // UN1: позиция 7,1 - неиспользованная
+                &kp Y     &kp U     &kp I     &kp O     &kp P     &kp LBKT  &kp RBKT
+                &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT   &trans    // UN3: позиция 7,3 - неиспользованная
+                &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &mo 1     &trans    // mo 1: позиция 6,4 - переключение на слой 1
+                &mo 2     &trans    &trans    &trans    &kp BSPC  &kp RET   &mo 3      // mo 2: позиция 1,5, mo 3: позиция 7,5 - переключение слоёв
             >;
         };
 
@@ -47,20 +47,20 @@
              * ┌───┬───┬───┬───┬───┬───┬───┐
              * │   │   │   │   │   │   │   │
              * ├───┼───┼───┼───┼───┼───┤   │
-             * │ESC│ 1 │ 2 │ 3 │ 4 │ 5 │   │
+             * │   │   │   │   │   │   │   │
              * ├───┼───┼───┼───┼───┼───┤   │
-             * │   │ - │ = │ [ │ ] │ \ │   │
+             * │   │   │   │   │   │   │   │
              * ├───┼───┼───┼───┼───┼───┤   │
-             * │   │ESC│GUI│CPY│PST│   │   │
+             * │   │   │   │   │   │   │   │
              * ├───┼───┼───┼───┼───┼───┤   │
              * │   │   │   │   │   │   │   │
              * └───┴───┴───┴───┴───┴───┴───┘
              */
             bindings = <
                 &trans    &trans    &trans    &trans    &trans    &trans    &trans
-                &kp ESC   &kp N1    &kp N2    &kp N3    &kp N4    &kp N5    &trans
-                &trans    &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT  &kp BSLH  &trans
-                &trans    &kp ESC   &kp LGUI  &kp LG(C) &kp LG(V) &kp GRAVE &trans
+                &trans    &trans    &trans    &trans    &trans    &trans    &trans
+                &trans    &trans    &trans    &trans    &trans    &trans    &trans
+                &trans    &trans    &trans    &trans    &trans    &trans    &trans
                 &trans    &trans    &trans    &trans    &trans    &trans    &trans
             >;
         };
@@ -70,20 +70,20 @@
              * ┌───┬───┬───┬───┬───┬───┬───┐
              * │   │   │   │   │   │   │   │
              * ├───┼───┼───┼───┼───┼───┤   │
-             * │ESC│ ! │ @ │ # │ $ │ % │   │
+             * │   │   │   │   │   │   │   │
              * ├───┼───┼───┼───┼───┼───┤   │
-             * │   │ _ │ + │ { │ } │ | │   │
+             * │   │   │   │   │   │   │   │
              * ├───┼───┼───┼───┼───┼───┤   │
-             * │   │ESC│GUI│ ( │ ) │ ~ │   │
+             * │   │   │   │   │   │   │   │
              * ├───┼───┼───┼───┼───┼───┤   │
              * │   │   │   │   │   │   │   │
              * └───┴───┴───┴───┴───┴───┴───┘
              */
             bindings = <
                 &trans    &trans    &trans    &trans    &trans    &trans    &trans
-                &kp ESC   &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT &trans
-                &trans    &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC  &kp PIPE  &trans
-                &trans    &kp ESC   &kp LGUI  &kp LPAR  &kp RPAR  &kp TILDE &trans
+                &trans    &trans    &trans    &trans    &trans    &trans    &trans
+                &trans    &trans    &trans    &trans    &trans    &trans    &trans
+                &trans    &trans    &trans    &trans    &trans    &trans    &trans
                 &trans    &trans    &trans    &trans    &trans    &trans    &trans
             >;
         };
@@ -91,24 +91,24 @@
         adjust_layer {
             /*
              * ┌───┬───┬───┬───┬───┬───┬───┐
-             * │F1 │F2 │F3 │F4 │F5 │F6 │   │
+             * │F7 │F8 │F9 │F10│F11│F12│   │
              * ├───┼───┼───┼───┼───┼───┤   │
-             * │   │   │   │   │   │BOOT│   │
+             * │   │   │   │   │   │   │   │
              * ├───┼───┼───┼───┼───┼───┤   │
-             * │   │MUT│V- │V+ │PP │RST│   │
+             * │   │   │   │   │   │   │   │
              * ├───┼───┼───┼───┼───┼───┤   │
-             * │   │PSC│PSC│CAP│   │   │   │
+             * │   │   │   │   │   │   │   │
              * ├───┼───┼───┼───┼───┼───┤   │
              * │   │   │   │   │   │   │   │
              * └───┴───┴───┴───┴───┴───┴───┘
              */
             bindings = <
-                &kp F1    &kp F2    &kp F3    &kp F4    &kp F5    &kp F6    &trans
-                &trans    &trans    &trans    &trans    &trans    &bootloader &trans
-                &trans    &kp K_MUTE &kp C_VOL_DN &kp C_VOL_UP &kp C_PLAY_PAUSE &sys_reset &trans
-                &trans    &kp PSCRN &kp PSCRN &kp CLCK &trans &trans &trans
+                &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12   &trans
+                &trans    &trans    &trans    &trans    &trans    &trans    &trans
+                &trans    &trans    &trans    &trans    &trans    &trans    &trans
+                &trans    &trans    &trans    &trans    &trans    &trans    &trans
                 &trans    &trans    &trans    &trans    &trans    &trans    &trans
             >;
         };
     };
-};
+}; 
