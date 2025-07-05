@@ -36,7 +36,5 @@
         >;
     };
 
-    zmk-studio {
-        compatible = "zmk,studio";
-    };
+
 };
