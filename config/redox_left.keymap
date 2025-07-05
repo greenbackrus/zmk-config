@@ -11,9 +11,6 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
-    zmk-studio {
-        compatible = "zmk,studio";
-    };
     keymap {
         compatible =  "zmk,keymap" ;
 
