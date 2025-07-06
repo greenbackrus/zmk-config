@@ -18,9 +18,8 @@
                     <&gpio1 4 GPIO_ACTIVE_HIGH>,   // D8
                     <&gpio1 6 GPIO_ACTIVE_HIGH>;   // D9
 
-        /* 7 столбцов: D10, D16, D14, D18, D15, D19, D20 */
-        col-gpios = <&gpio0 9 GPIO_ACTIVE_HIGH>,    // D10
-                    <&gpio0 10 GPIO_ACTIVE_HIGH>,   // D16
+        /* 6 столбцов: D16, D14, D18, D15, D19, D20 (D10 отключён) */
+        col-gpios = <&gpio0 10 GPIO_ACTIVE_HIGH>,   // D16
                     <&gpio1 11 GPIO_ACTIVE_HIGH>,   // D14
                     <&gpio1 15 GPIO_ACTIVE_HIGH>,   // D18
                     <&gpio1 13 GPIO_ACTIVE_HIGH>,   // D15
@@ -31,13 +30,13 @@
     dvv_transform: matrix_transform {
         compatible = "zmk,matrix-transform";
         rows = <5>;
-        columns = <7>;
+        columns = <6>;
         map = <
-            0 1 2 3 4 5 6
-            7 8 9 10 11 12 13
-            14 15 16 17 18 19 20
-            21 22 23 24 25 26 27
-            28 29 30 31 32 33 34
+            0 1 2 3 4 5
+            6 7 8 9 10 11
+            12 13 14 15 16 17
+            18 19 20 21 22 23
+            24 25 26 27 28 29
         >;
     };
 };
