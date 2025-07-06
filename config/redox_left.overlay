@@ -3,6 +3,7 @@
     chosen {
         zmk,kscan = &kscan0;
         zmk,matrix-transform = &dvv_transform;
+        zephyr,display = &nice_view_oled;
     };
 
     kscan0: kscan {
@@ -39,9 +40,6 @@
             21 22 23 24 25 26 27
             28 29 30 31 32 33 34
         >;
-    };
-        chosen {
-        zephyr,display = &nice_view_oled;
     };
 
     &i2c0 {
