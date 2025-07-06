@@ -42,7 +42,7 @@
         >;
     };
 
-    i2c0: &i2c0 {
+    &i2c0 {
         status = "okay";
 
         nice_view_oled: ssd1306@3c {
