@@ -18,13 +18,16 @@
                     <&gpio1 4 GPIO_ACTIVE_HIGH>,   // D8
                     <&gpio1 6 GPIO_ACTIVE_HIGH>;   // D9
 
-        /* 6 столбцов: D16, D14, D18, D15, D19, D20 (D10 отключён) */
-        col-gpios = <&gpio0 10 GPIO_ACTIVE_HIGH>,   // D16
+        /* 7 столбцов: D10, D16, D14, D18, D15, D19, D20  */
+        col-gpios = <&gpio0 9 GPIO_ACTIVE_HIGH>,   // D10 
+                    <&gpio0 10 GPIO_ACTIVE_HIGH>,   // D16
                     <&gpio1 11 GPIO_ACTIVE_HIGH>,   // D14
-                    <&gpio1 15 GPIO_ACTIVE_HIGH>,   // D18
                     <&gpio1 13 GPIO_ACTIVE_HIGH>,   // D15
+                    <&gpio1 15 GPIO_ACTIVE_HIGH>,   // D18
                     <&gpio0 2 GPIO_ACTIVE_HIGH>,    // D19
                     <&gpio0 29 GPIO_ACTIVE_HIGH>;   // D20
+
+
     };
 
     dvv_transform: matrix_transform {
