@@ -1,31 +1,35 @@
+#include <dt-bindings/zmk/matrix_transform.h>
 / {
     chosen {
         zmk,kscan = &kscan0;
-        zmk,matrix-transform = &default_transform;
+        zmk,matrix-transform = &dvv_transform;
+        zephyr,display = &nice_view_oled;
     };
 
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";
-        
-        /* 5 рядов: 1(D5),2(D6),3(D7),4(D8),5(D9) */
-        row-gpios = <&gpio0 5 GPIO_ACTIVE_HIGH>,
-                    <&gpio0 6 GPIO_ACTIVE_HIGH>,
-                    <&gpio0 7 GPIO_ACTIVE_HIGH>,
-                    <&gpio0 8 GPIO_ACTIVE_HIGH>,
-                    <&gpio0 9 GPIO_ACTIVE_HIGH>;
 
-        /* 7 столбцов: 1(D20),2(D19),3(D15),4(D18),5(D14),6(D16),7(D10) */
-        col-gpios = <&gpio1 20 GPIO_ACTIVE_HIGH>,
-                    <&gpio1 19 GPIO_ACTIVE_HIGH>,
+        /* 5 рядов: D5–D9 => P0.24, P1.0, P0.11, P1.4, P1.6 */
+        row-gpios = <&gpio0 24 GPIO_ACTIVE_HIGH>,
+                    <&gpio1 0 GPIO_ACTIVE_HIGH>,
+                    <&gpio0 11 GPIO_ACTIVE_HIGH>,
+                    <&gpio1 4 GPIO_ACTIVE_HIGH>,
+                    <&gpio1 6 GPIO_ACTIVE_HIGH>;
+
+        /* 7 столбцов: D20–D10 =>
+           D20: P0.29, D19: P0.2, D15: P1.13,
+           D18: P1.15, D14: P1.11, D16: P0.10, D10: P0.9 */
+        col-gpios = <&gpio0 29 GPIO_ACTIVE_HIGH>,
+                    <&gpio0 2 GPIO_ACTIVE_HIGH>,
+                    <&gpio1 13 GPIO_ACTIVE_HIGH>,
                     <&gpio1 15 GPIO_ACTIVE_HIGH>,
-                    <&gpio1 18 GPIO_ACTIVE_HIGH>,
-                    <&gpio1 14 GPIO_ACTIVE_HIGH>,
-                    <&gpio1 16 GPIO_ACTIVE_HIGH>,
-                    <&gpio1 10 GPIO_ACTIVE_HIGH>;
+                    <&gpio1 11 GPIO_ACTIVE_HIGH>,
+                    <&gpio0 10 GPIO_ACTIVE_HIGH>,
+                    <&gpio0 9 GPIO_ACTIVE_HIGH>;
     };
 
-    default_transform: matrix_transform {
+    dvv_transform: matrix_transform {
         compatible = "zmk,matrix-transform";
         rows = <5>;
         columns = <7>;
@@ -37,4 +41,19 @@
             28 29 30 31 32 33 34
         >;
     };
-}; 
+
+    i2c0: &i2c0 {
+        status = "okay";
+
+        nice_view_oled: ssd1306@3c {
+            compatible = "solomon,ssd1306fb";
+            reg = <0x3c>;
+            width = <128>;
+            height = <64>;
+            segment-offset = <0>;
+            page-offset = <0>;
+            display-inverted;
+            // reset-gpios = <&gpio0 10 GPIO_ACTIVE_LOW>; // если есть пин RESET
+        };
+    };
+};
