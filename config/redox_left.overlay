@@ -2,7 +2,7 @@
 / {
     chosen {
         zmk,kscan = &kscan0;
-        zmk,matrix-transform = &default_transform;
+        zmk,matrix-transform = &dvv_transform;
     };
 
     kscan0: kscan {
@@ -26,7 +26,7 @@
                     <&gpio1 10 GPIO_ACTIVE_HIGH>;
     };
 
-    default_transform: matrix_transform {
+    dvv_transform: matrix_transform {
         compatible = "zmk,matrix-transform";
         rows = <5>;
         columns = <7>;
@@ -37,5 +37,24 @@
             21 22 23 24 25 26 27
             28 29 30 31 32 33 34
         >;
+    };
+
+    /* OLED Display Support */
+    &i2c0 {
+        status = "okay";
+        
+        oled: ssd1306@3c {
+            compatible = "solomon,ssd1306fb";
+            reg = <0x3c>;
+            width = <128>;
+            height = <32>;
+            segment-offset = <0>;
+            page-offset = <0>;
+            display-offset = <0>;
+            multiplex-ratio = <31>;
+            segment-remap;
+            com-invdir;
+            prechargep = <0x22>;
+        };
     };
 };
