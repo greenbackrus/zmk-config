@@ -43,7 +43,7 @@
     /* OLED Display */
     &i2c0 {
         status = "okay";
-        
+
         oled: ssd1306@3c {
             compatible = "solomon,ssd1306fb";
             reg = <0x3c>;
