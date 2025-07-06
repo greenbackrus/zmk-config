@@ -11,4 +11,4 @@
         display-inverted;
         /* reset-gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;  <-- если есть RESET — включи */
     };
-};
+};;
