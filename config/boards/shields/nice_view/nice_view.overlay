@@ -1,4 +1,10 @@
-&i2c1 {
+/ {
+    chosen {
+        zephyr,display = &nice_view_oled;
+    };
+};
+
+&i2c0 {
     status = "okay";
 
     nice_view_oled: ssd1306@3c {
@@ -11,4 +17,4 @@
         display-inverted;
         /* reset-gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;  <-- если есть RESET — включи */
     };
-};;
+};
