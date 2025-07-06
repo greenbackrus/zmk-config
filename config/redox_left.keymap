@@ -16,24 +16,29 @@
 
         default_layer {
             /*
+             * Левая половинка клавиатуры (7x5)
+             * Столбцы: 1-7 (от центра к краям)
+             * Ряды: 1-5 (сверху вниз)
+             * 
              * ┌───┬───┬───┬───┬───┬───┬───┐
-             * │ESC│ 1 │ 2 │ 3 │ 4 │ 5 │   │
+             * │ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │   │  <- Ряд 1
              * ├───┼───┼───┼───┼───┼───┤   │
-             * │TAB│ Q │ W │ E │ R │ T │   │
+             * │TAB│ Q │ W │ E │ R │ T │   │  <- Ряд 2 (QWERTY)
              * ├───┼───┼───┼───┼───┼───┤   │
-             * │CTL│ A │ S │ D │ F │ G │   │
+             * │ALT│ A │ S │ D │ F │ G │   │  <- Ряд 3 (QWERTY)
              * ├───┼───┼───┼───┼───┼───┤   │
-             * │SFT│ Z │ X │ C │ V │ B │   │
+             * │CTL│ Z │ X │ C │ V │ B │SFT│  <- Ряд 4 (QWERTY, с дополнительной кнопкой)
              * ├───┼───┼───┼───┼───┼───┤   │
-             * │CTL│ALT│GUI│LOW│GUI│LOW│   │
+             * │   │   │   │   │DEL│ESC│SFT│  <- Ряд 5 (островок)
              * └───┴───┴───┴───┴───┴───┴───┘
+             *   1   2   3   4   5   6   7
              */
             bindings = <
-                &kp ESC   &kp N1   &kp N2   &kp N3   &kp N4   &kp N5   &trans
-                &kp TAB   &kp Q    &kp W    &kp E    &kp R    &kp T    &trans
-                &kp LCTRL &kp A    &kp S    &kp D    &kp F    &kp G    &trans
-                &kp LSHFT &kp Z    &kp X    &kp C    &kp V    &kp B    &trans
-                &kp LCTRL &kp LALT &kp LGUI &mo 1    &kp LGUI &mo 1    &trans
+                &kp N1    &kp N2    &kp N3    &kp N4    &kp N5    &kp N6    &trans
+                &kp TAB   &kp Q     &kp W     &kp E     &kp R     &kp T     &trans
+                &kp LALT  &kp A     &kp S     &kp D     &kp F     &kp G     &trans
+                &kp LCTRL &kp Z     &kp X     &kp C     &kp V     &kp B     &mo 1
+                &mo 2     &trans    &trans    &trans    &kp DEL   &kp ESC   &mo 3
             >;
         };
 

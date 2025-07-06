@@ -16,24 +16,29 @@
 
         default_layer {
             /*
+             * Правая половинка клавиатуры (7x5)
+             * Столбцы: 1-7 (от центра к краям)
+             * Ряды: 1-5 (сверху вниз)
+             * 
              * ┌───┬───┬───┬───┬───┬───┬───┐
-             * │ESC│ 1 │ 2 │ 3 │ 4 │ 5 │   │
+             * │ 7 │ 8 │ 9 │ 0 │ - │ = │   │  <- Ряд 1
              * ├───┼───┼───┼───┼───┼───┤   │
-             * │TAB│ Q │ W │ E │ R │ T │   │
+             * │ Y │ U │ I │ O │ P │ [ │ ] │  <- Ряд 2
              * ├───┼───┼───┼───┼───┼───┤   │
-             * │CTL│ A │ S │ D │ F │ G │   │
+             * │ H │ J │ K │ L │ ; │ ' │   │  <- Ряд 3
              * ├───┼───┼───┼───┼───┼───┤   │
-             * │SFT│ Z │ X │ C │ V │ B │   │
+             * │ N │ M │ , │ . │ / │   │   │  <- Ряд 4 (с дополнительной кнопкой)
              * ├───┼───┼───┼───┼───┼───┤   │
-             * │CTL│ALT│GUI│LOW│GUI│LOW│   │
+             * │   │   │   │   │BSP│ENT│SPC│  <- Ряд 5 (островок)
              * └───┴───┴───┴───┴───┴───┴───┘
+             *   1   2   3   4   5   6   7
              */
             bindings = <
-                &kp ESC   &kp N1   &kp N2   &kp N3   &kp N4   &kp N5   &trans
-                &kp TAB   &kp Q    &kp W    &kp E    &kp R    &kp T    &trans
-                &kp LCTRL &kp A    &kp S    &kp D    &kp F    &kp G    &trans
-                &kp LSHFT &kp Z    &kp X    &kp C    &kp V    &kp B    &trans
-                &kp LCTRL &kp LALT &kp LGUI &mo 1    &kp LGUI &mo 1    &trans
+                &kp N7    &kp N8    &kp N9    &kp N0    &kp MINUS &kp EQUAL &trans
+                &kp Y     &kp U     &kp I     &kp O     &kp P     &kp LBKT  &kp RBKT
+                &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT   &trans
+                &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &trans    &trans
+                &trans    &trans    &trans    &trans    &kp BSPC  &kp RET   &kp SPACE
             >;
         };
 
@@ -42,20 +47,20 @@
              * ┌───┬───┬───┬───┬───┬───┬───┐
              * │   │   │   │   │   │   │   │
              * ├───┼───┼───┼───┼───┼───┤   │
-             * │ESC│ 1 │ 2 │ 3 │ 4 │ 5 │   │
+             * │   │   │   │   │   │   │   │
              * ├───┼───┼───┼───┼───┼───┤   │
-             * │   │ - │ = │ [ │ ] │ \ │   │
+             * │   │   │   │   │   │   │   │
              * ├───┼───┼───┼───┼───┼───┤   │
-             * │   │ESC│GUI│CPY│PST│   │   │
+             * │   │   │   │   │   │   │   │
              * ├───┼───┼───┼───┼───┼───┤   │
              * │   │   │   │   │   │   │   │
              * └───┴───┴───┴───┴───┴───┴───┘
              */
             bindings = <
                 &trans    &trans    &trans    &trans    &trans    &trans    &trans
-                &kp ESC   &kp N1    &kp N2    &kp N3    &kp N4    &kp N5    &trans
-                &trans    &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT  &kp BSLH  &trans
-                &trans    &kp ESC   &kp LGUI  &kp LG(C) &kp LG(V) &kp GRAVE &trans
+                &trans    &trans    &trans    &trans    &trans    &trans    &trans
+                &trans    &trans    &trans    &trans    &trans    &trans    &trans
+                &trans    &trans    &trans    &trans    &trans    &trans    &trans
                 &trans    &trans    &trans    &trans    &trans    &trans    &trans
             >;
         };
@@ -65,20 +70,20 @@
              * ┌───┬───┬───┬───┬───┬───┬───┐
              * │   │   │   │   │   │   │   │
              * ├───┼───┼───┼───┼───┼───┤   │
-             * │ESC│ ! │ @ │ # │ $ │ % │   │
+             * │   │   │   │   │   │   │   │
              * ├───┼───┼───┼───┼───┼───┤   │
-             * │   │ _ │ + │ { │ } │ | │   │
+             * │   │   │   │   │   │   │   │
              * ├───┼───┼───┼───┼───┼───┤   │
-             * │   │ESC│GUI│ ( │ ) │ ~ │   │
+             * │   │   │   │   │   │   │   │
              * ├───┼───┼───┼───┼───┼───┤   │
              * │   │   │   │   │   │   │   │
              * └───┴───┴───┴───┴───┴───┴───┘
              */
             bindings = <
                 &trans    &trans    &trans    &trans    &trans    &trans    &trans
-                &kp ESC   &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT &trans
-                &trans    &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC  &kp PIPE  &trans
-                &trans    &kp ESC   &kp LGUI  &kp LPAR  &kp RPAR  &kp TILDE &trans
+                &trans    &trans    &trans    &trans    &trans    &trans    &trans
+                &trans    &trans    &trans    &trans    &trans    &trans    &trans
+                &trans    &trans    &trans    &trans    &trans    &trans    &trans
                 &trans    &trans    &trans    &trans    &trans    &trans    &trans
             >;
         };
@@ -86,22 +91,22 @@
         adjust_layer {
             /*
              * ┌───┬───┬───┬───┬───┬───┬───┐
-             * │F1 │F2 │F3 │F4 │F5 │F6 │   │
+             * │F7 │F8 │F9 │F10│F11│F12│   │
              * ├───┼───┼───┼───┼───┼───┤   │
-             * │   │   │   │   │   │BOOT│   │
+             * │   │   │   │   │   │   │   │
              * ├───┼───┼───┼───┼───┼───┤   │
-             * │   │MUT│V- │V+ │PP │RST│   │
+             * │   │   │   │   │   │   │   │
              * ├───┼───┼───┼───┼───┼───┤   │
-             * │   │PSC│PSC│CAP│   │   │   │
+             * │   │   │   │   │   │   │   │
              * ├───┼───┼───┼───┼───┼───┤   │
              * │   │   │   │   │   │   │   │
              * └───┴───┴───┴───┴───┴───┴───┘
              */
             bindings = <
-                &kp F1    &kp F2    &kp F3    &kp F4    &kp F5    &kp F6    &trans
-                &trans    &trans    &trans    &trans    &trans    &bootloader &trans
-                &trans    &kp K_MUTE &kp C_VOL_DN &kp C_VOL_UP &kp C_PLAY_PAUSE &sys_reset &trans
-                &trans    &kp PSCRN &kp PSCRN &kp CLCK &trans &trans &trans
+                &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12   &trans
+                &trans    &trans    &trans    &trans    &trans    &trans    &trans
+                &trans    &trans    &trans    &trans    &trans    &trans    &trans
+                &trans    &trans    &trans    &trans    &trans    &trans    &trans
                 &trans    &trans    &trans    &trans    &trans    &trans    &trans
             >;
         };
