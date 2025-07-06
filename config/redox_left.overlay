@@ -40,4 +40,22 @@
             28 29 30 31 32 33 34
         >;
     };
+        chosen {
+        zephyr,display = &nice_view_oled;
+    };
+
+    &i2c0 {
+        status = "okay";
+
+        nice_view_oled: ssd1306@3c {
+            compatible = "solomon,ssd1306fb";
+            reg = <0x3c>;
+            width = <128>;
+            height = <64>;
+            segment-offset = <0>;
+            page-offset = <0>;
+            display-inverted;
+            // reset-gpios = <&gpio0 10 GPIO_ACTIVE_LOW>; // если есть пин RESET
+        };
+    };
 }; 
