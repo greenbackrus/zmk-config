@@ -9,22 +9,6 @@
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";
-        
-        // 5 рядов
-        // row-gpios = <&gpio1 20 GPIO_ACTIVE_HIGH>,
-        //             <&gpio1 19 GPIO_ACTIVE_HIGH>,
-        //             <&gpio1 18 GPIO_ACTIVE_HIGH>,
-        //             <&gpio1 15 GPIO_ACTIVE_HIGH>,
-        //             <&gpio1 14 GPIO_ACTIVE_HIGH>;
-
-        // 7 столбцов
-        // col-gpios = <&gpio0 5 GPIO_ACTIVE_HIGH>,
-        //             <&gpio1 6 GPIO_ACTIVE_HIGH>,
-        //             <&gpio1 7 GPIO_ACTIVE_HIGH>,
-        //             <&gpio1 8 GPIO_ACTIVE_HIGH>,
-        //             <&gpio1 9 GPIO_ACTIVE_HIGH>,
-        //             <&gpio1 16 GPIO_ACTIVE_HIGH>,
-        //             <&gpio1 10 GPIO_ACTIVE_HIGH>;
 
         /* 5 рядов: D5–D9 => P0.24, P1.00, P0.11, P1.04, P1.06 */
         row-gpios = 
