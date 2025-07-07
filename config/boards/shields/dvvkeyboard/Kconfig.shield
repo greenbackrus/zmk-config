@@ -1,0 +1,2 @@
+config SHIELD_DVVKEYBOARD
+    def_boo; $(shields_list_contains, dvvkeyboard)
