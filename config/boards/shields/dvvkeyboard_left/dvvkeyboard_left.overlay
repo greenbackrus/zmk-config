@@ -57,7 +57,8 @@
         prechargep = <0x22>;
         // reset-gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
     };
-};
-&zmk {
-    split-role = "left";
+    zmk: zmk-config {
+        compatible = "zmk,config";
+        split-role = "left";  // или "right"
+    };
 };
