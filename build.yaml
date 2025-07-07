@@ -28,4 +28,6 @@ include:
 #  - board: nice_nano_v2
 #    shield: tester_pro_micro
   - board: nice_nano_v2
-    shield: dvvkeyboard
+    shield: dvvkeyboard_left
+  - board: nice_nano_v2
+    shield: dvvkeyboard_right
