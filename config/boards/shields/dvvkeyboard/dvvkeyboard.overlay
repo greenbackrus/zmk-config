@@ -28,21 +28,21 @@
 
         /* 5 рядов: D5–D9 => P0.24, P1.00, P0.11, P1.04, P1.06 */
         row-gpios = 
-            <&promicro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  // D5
-            <&promicro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  // D6
-            <&promicro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  // D7
-            <&promicro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  // D8
-            <&promicro 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;  // D9
+            <&pro_micro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  // D5
+            <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  // D6
+            <&pro_micro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  // D7
+            <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  // D8
+            <&pro_micro 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;  // D9
 
         /* 7 столбцов: D10, D16, D14, D15, D18, D19, D20 */
         col-gpios = 
-            <&promicro 15 GPIO_ACTIVE_HIGH>,  // D15 - столбец 1 (TAB)
-            <&promicro 16 GPIO_ACTIVE_HIGH>,  // D16 - столбец 2 (Q)
-            <&promicro 14 GPIO_ACTIVE_HIGH>,  // D14 - столбец 3 (W)
-            <&promicro 10 GPIO_ACTIVE_HIGH>,  // D10 - столбец 4 (E)
-            <&promicro 18 GPIO_ACTIVE_HIGH>,  // D18 - столбец 5 (R)
-            <&promicro 19 GPIO_ACTIVE_HIGH>,  // D19 - столбец 6 (T)
-            <&promicro 20 GPIO_ACTIVE_HIGH>;  // D20 - столбец 7 (пустой)
+            <&pro_micro 15 GPIO_ACTIVE_HIGH>,  // D15 - столбец 1 (TAB)
+            <&pro_micro 16 GPIO_ACTIVE_HIGH>,  // D16 - столбец 2 (Q)
+            <&pro_micro 14 GPIO_ACTIVE_HIGH>,  // D14 - столбец 3 (W)
+            <&pro_micro 10 GPIO_ACTIVE_HIGH>,  // D10 - столбец 4 (E)
+            <&pro_micro 18 GPIO_ACTIVE_HIGH>,  // D18 - столбец 5 (R)
+            <&pro_micro 19 GPIO_ACTIVE_HIGH>,  // D19 - столбец 6 (T)
+            <&pro_micro 20 GPIO_ACTIVE_HIGH>;  // D20 - столбец 7 (пустой)
     };
 
     default_transform: matrix_transform {
