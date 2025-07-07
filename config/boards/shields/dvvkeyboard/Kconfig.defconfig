@@ -1,6 +1,0 @@
-if SHIELD_DVVKEYBOARD
-
-config ZMK_KEYBOARD_NAME
-    default "DVV Keyboard"
-
-endif

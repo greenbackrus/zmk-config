@@ -58,3 +58,6 @@
         // reset-gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
     };
 };
+&zmk {
+    split-role = "left";
+};
