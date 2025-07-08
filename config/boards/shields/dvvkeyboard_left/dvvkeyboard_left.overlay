@@ -65,10 +65,12 @@
 
 
 &i2c1 {
-    compatible = "nordic,nrf-twi";
+    compatible = "solomon,ssd1306fb";
     status = "okay";
     sda-pin = <36>; // P1.04
     scl-pin = <38>; // P1.06
+    pinctrl-0 = <&i2c1_default>;
+    pinctrl-names = "default";
     clock-frequency = <I2C_BITRATE_STANDARD>; // 100kHz — безопасно
 
     nice_view_oled: ssd1306@3c {
@@ -81,8 +83,14 @@
         page-offset = <0>;
         display-offset = <0>;
         multiplex-ratio = <31>;
-        prechargep = <0x22>;
+        rechargep = <0x22>;
+        inversion-on;
     };
 };
-
+&i2c1_default {
+    group1 {
+        pins = <36 38>; // P1.04 (SDA), P1.06 (SCL)
+        function = <1>; // функция I2C (pinmux)
+    };
+};
 
