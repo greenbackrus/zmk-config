@@ -23,9 +23,9 @@
         col-gpios = 
             <&pro_micro 20 GPIO_ACTIVE_HIGH>,  // D20 - столбец 7 (пустой)
             <&pro_micro 19 GPIO_ACTIVE_HIGH>,  // D19 - столбец 6 (T)
-            <&pro_micro 18 GPIO_ACTIVE_HIGH>,  // D18 - столбец 5 (R)
-            <&pro_micro 14 GPIO_ACTIVE_HIGH>,  // D10 - столбец 4 (E)
-            <&pro_micro 15 GPIO_ACTIVE_HIGH>,  // D14 - столбец 3 (W)
+            <&pro_micro 15 GPIO_ACTIVE_HIGH>,  // D18 - столбец 5 (R)
+            <&pro_micro 18 GPIO_ACTIVE_HIGH>,  // D10 - столбец 4 (E)
+            <&pro_micro 14 GPIO_ACTIVE_HIGH>,  // D14 - столбец 3 (W)
             <&pro_micro 16 GPIO_ACTIVE_HIGH>,  // D16 - столбец 2 (Q)
             <&pro_micro 10 GPIO_ACTIVE_HIGH>;  // D15 - столбец 1 (TAB)
     };

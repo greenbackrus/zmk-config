@@ -69,7 +69,7 @@
     scl-pin = <38>; // P1.06
     clock-frequency = <I2C_BITRATE_STANDARD>; // 100kHz — безопасно
 
-    ssd1306@3c {
+    nice_view_oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
         reg = <0x3c>;
         label = "SSD1306";
