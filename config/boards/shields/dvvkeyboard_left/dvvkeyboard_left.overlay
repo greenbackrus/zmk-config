@@ -77,9 +77,8 @@
         multiplex-ratio = <31>;
     };
 };
-    
+
     zmk: zmk-config {
         compatible = "zmk,config";
         split-role = "left";  // или "right"
     };
-};
