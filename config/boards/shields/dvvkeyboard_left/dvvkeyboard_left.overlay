@@ -65,7 +65,7 @@
 
 
 &i2c1 {
-    compatible = "solomon,ssd1306fb";
+    compatible = "nordic,nrf-twi";
     status = "okay";
     sda-pin = <36>; // P1.04
     scl-pin = <38>; // P1.06
