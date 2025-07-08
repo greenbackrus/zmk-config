@@ -65,7 +65,7 @@
 
 
 &i2c1 {
-    compatible = "solomon,ssd1306fb";
+    compatible = "nordic,nrf-twi";
     status = "okay";
     sda-pin = <36>; // P1.04
     scl-pin = <38>; // P1.06
@@ -83,7 +83,7 @@
         page-offset = <0>;
         display-offset = <0>;
         multiplex-ratio = <31>;
-        rechargep = <0x22>;
+        prechargep = <0x22>;
         inversion-on;
     };
 };
