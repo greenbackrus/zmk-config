@@ -69,8 +69,6 @@
     status = "okay";
     sda-pin = <36>; // P1.04
     scl-pin = <38>; // P1.06
-    pinctrl-0 = <&i2c1_default>;
-    pinctrl-names = "default";
     clock-frequency = <I2C_BITRATE_STANDARD>; // 100kHz — безопасно
 
     nice_view_oled: ssd1306@3c {
