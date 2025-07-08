@@ -62,8 +62,10 @@
 //         // reset-gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
 //     };
 // }
+
+
 &i2c1 {
-    compatible = "nordic,nrf-twi";
+    compatible = "solomon,ssd1306fb";
     status = "okay";
     sda-pin = <36>; // P1.04
     scl-pin = <38>; // P1.06
@@ -79,6 +81,7 @@
         page-offset = <0>;
         display-offset = <0>;
         multiplex-ratio = <31>;
+        rechargep = <0x22>;
     };
 };
 
