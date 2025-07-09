@@ -13,10 +13,10 @@
     label = "nice_view";
 };
 / {
-    display_text {
-        compatible = "zmk,display-text";
-        text = "Redox Left";
-    };
+#    display_text {
+#        compatible = "zmk,display-text";
+#        text = "Redox Left";
+#    };
     keymap {
         compatible = "zmk,keymap";
 
