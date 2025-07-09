@@ -23,10 +23,15 @@
         display-offset = <0>;
         multiplex-ratio = <31>;
         prechargep = <0x22>;
-        inversion-on;
     };
 };
 / {
+    default_oled_layout: display_layout {
+        compatible = "zmk,display-layout";
+        line-0 = "layer";
+        line-1 = "capslock_status";
+        line-2 = "battery_status";
+        };
     chosen {
         zmk,kscan = &kscan0;
         zmk,matrix-transform = &default_transform;
