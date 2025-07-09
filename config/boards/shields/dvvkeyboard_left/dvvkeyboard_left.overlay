@@ -23,7 +23,6 @@
         display-offset = <0>;
         multiplex-ratio = <31>;
         prechargep = <0x22>;
-        display-layout = <&default_oled_layout>;
     };
 };
 / {
@@ -37,6 +36,7 @@
         zmk,kscan = &kscan0;
         zmk,matrix-transform = &default_transform;
         zephyr,display = &nice_view_oled;
+        zmk,display-layout = &default_oled_layout;
     };
 
     kscan0: kscan {
