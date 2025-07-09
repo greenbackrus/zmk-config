@@ -22,10 +22,12 @@
         inversion-on;
     };
 };
-i2c1_default: i2c1_default {
-    group1 {
-        pins = <36 38>; // P1.04 (SDA), P1.06 (SCL)
-        function = <1>; // функция I2C (pinmux)
+&pinctrl {
+    i2c1_default: i2c1_default {
+        group1 {
+            pins = <36 38>;
+            function = <1>;
+        };
     };
 };
 / {
