@@ -1,12 +1,16 @@
 #include <dt-bindings/zmk/matrix_transform.h>
+&pinctrl {
+    i2c1_default: i2c1_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 1, 4)>, <NRF_PSEL(TWIM_SCL, 1, 6)>;
+        };
+    };
+};
+
 &i2c1 {
-    compatible = "nordic,nrf-twi";
     status = "okay";
-    sda-pin = <36>; // P1.04
-    scl-pin = <38>; // P1.06
     pinctrl-0 = <&i2c1_default>;
     pinctrl-names = "default";
-    clock-frequency = <I2C_BITRATE_STANDARD>; // 100kHz — безопасно
 
     nice_view_oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
@@ -20,14 +24,6 @@
         multiplex-ratio = <31>;
         prechargep = <0x22>;
         inversion-on;
-    };
-};
-&pinctrl {
-    i2c1_default: i2c1_default {
-        group1 {
-            pins = <36 38>;
-            function = <1>;
-        };
     };
 };
 / {
