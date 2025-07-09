@@ -1,31 +1,31 @@
 #include <dt-bindings/zmk/matrix_transform.h>
-&pinctrl {
-    i2c1_default: i2c1_default {
-        group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 1, 6)>, <NRF_PSEL(TWIM_SCL, 1, 4)>;
-        };
-    };
-};
+// &pinctrl {
+//     i2c1_default: i2c1_default {
+//         group1 {
+//             psels = <NRF_PSEL(TWIM_SDA, 1, 6)>, <NRF_PSEL(TWIM_SCL, 1, 4)>;
+//         };
+//     };
+// };
 
-&i2c1 {
-    status = "okay";
-    pinctrl-0 = <&i2c1_default>;
-    pinctrl-names = "default";
-    clock-frequency = <100000>;
+// &i2c1 {
+//     status = "okay";
+//     pinctrl-0 = <&i2c1_default>;
+//     pinctrl-names = "default";
+//     clock-frequency = <100000>;
 
-    nice_view_oled: ssd1306@3c {
-        compatible = "solomon,ssd1306fb";
-        reg = <0x3c>;
-        label = "SSD1306";
-        width = <128>;
-        height = <32>;
-        segment-offset = <0>;
-        page-offset = <0>;
-        display-offset = <0>;
-        multiplex-ratio = <31>;
-        prechargep = <0xF1>;
-    };
-};
+//     nice_view_oled: ssd1306@3c {
+//         compatible = "solomon,ssd1306fb";
+//         reg = <0x3c>;
+//         label = "SSD1306";
+//         width = <128>;
+//         height = <32>;
+//         segment-offset = <0>;
+//         page-offset = <0>;
+//         display-offset = <0>;
+//         multiplex-ratio = <31>;
+//         prechargep = <0xF1>;
+//     };
+// };
 / {
     default_oled_layout: display_layout {
         compatible = "zmk,display-layout";
