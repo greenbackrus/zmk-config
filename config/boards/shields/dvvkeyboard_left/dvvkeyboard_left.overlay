@@ -57,8 +57,8 @@ compatible = "zmk,kscan-gpio-matrix";
         <&pro_micro 15 GPIO_ACTIVE_HIGH>,  // D15
         <&pro_micro 18 GPIO_ACTIVE_HIGH>,  // D18
         <&pro_micro 19 GPIO_ACTIVE_HIGH>,  // D19
-        <&pro_micro 20 GPIO_ACTIVE_HIGH>;  // D20
-        <&pro_micro 21 GPIO_ACTIVE_HIGH>,   // D21
+        <&pro_micro 20 GPIO_ACTIVE_HIGH>,  // D20
+        <&pro_micro 21 GPIO_ACTIVE_HIGH>;   // D21
     };
 
     matrix_transform: matrix_transform {
