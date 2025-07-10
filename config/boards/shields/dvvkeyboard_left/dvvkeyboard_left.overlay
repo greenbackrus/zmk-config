@@ -46,21 +46,22 @@
 
         /* 5 рядов: D5–D9 => P0.24, P1.00, P0.11, P1.04, P1.06 */
         row-gpios = 
-            <&pro_micro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  // D5
-            <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  // D6
+            <&pro_micro 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  // D5
+            <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  // D6
             <&pro_micro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  // D7
-            <&pro_micro 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  // освободил место под экранчик
-            <&pro_micro 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;  // освободил место под экранчик
+            <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  // освободил место под экранчик
+            <&pro_micro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;  // освободил место под экранчик
 
         /* 7 столбцов: D10, D16, D14, D15, D18, D19, D20 */
         col-gpios = 
-            <&pro_micro 4 GPIO_ACTIVE_HIGH>,  // перенес с 10, он не работает
             <&pro_micro 16 GPIO_ACTIVE_HIGH>,  // D16 - столбец 2 (Q)
             <&pro_micro 14 GPIO_ACTIVE_HIGH>,  // D14 - столбец 3 (W)
             <&pro_micro 15 GPIO_ACTIVE_HIGH>,  // D10 - столбец 4 (E)
             <&pro_micro 18 GPIO_ACTIVE_HIGH>,  // D18 - столбец 5 (R)
             <&pro_micro 19 GPIO_ACTIVE_HIGH>,  // D19 - столбец 6 (T)
-            <&pro_micro 20 GPIO_ACTIVE_HIGH>;  // D20 - столбец 7 (пустой)
+            <&pro_micro 20 GPIO_ACTIVE_HIGH>  // D20 - столбец 7 (пустой)
+            <&pro_micro 21 GPIO_ACTIVE_HIGH>  // D21 - столбец 7 (пустой)
+    
     };
 
     default_transform: matrix_transform {
