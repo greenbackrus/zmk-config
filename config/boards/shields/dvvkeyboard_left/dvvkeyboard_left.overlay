@@ -32,15 +32,14 @@
     compatible = "nice,nice_nano_v2";
 };
 
-/ {
+ / {
     zmk_config: zmk-config {
         compatible = "zmk,config";
-        split-role = "left";  // или "right"
+        split-role = "left"; // или "right"
     };
-};
 
-&kscan0 {
-    compatible = "zmk,kscan-gpio-matrix";
+    kscan0: kscan {
+compatible = "zmk,kscan-gpio-matrix";
     diode-direction = "col2row";
 
     // 5 рядов
@@ -59,32 +58,33 @@
         <&pro_micro 18 GPIO_ACTIVE_HIGH>,  // D18
         <&pro_micro 19 GPIO_ACTIVE_HIGH>,  // D19
         <&pro_micro 20 GPIO_ACTIVE_HIGH>;  // D20
-        <&pro_micro 4 GPIO_ACTIVE_HIGH>,   // D21
-};
+        <&pro_micro 21 GPIO_ACTIVE_HIGH>,   // D21
+    };
 
-&matrix_transform {
-    compatible = "zmk,matrix-transform";
-    rows = <5>;
-    columns = <7>;
-    map = <
-        RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4) RC(0,5) RC(0,6)
-        RC(1,0) RC(1,1) RC(1,2) RC(1,3) RC(1,4) RC(1,5) RC(1,6)
-        RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5) RC(2,6)
-        RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(3,6)
-        RC(4,0) RC(4,1) RC(4,2) RC(4,3) RC(4,4) RC(4,5) RC(4,6)
-    >;
-};
+    matrix_transform: matrix_transform {
+        compatible = "zmk,matrix-transform";
+        rows = <5>;
+        columns = <7>;
+        map = <
+            RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4) RC(0,5) RC(0,6)
+            RC(1,0) RC(1,1) RC(1,2) RC(1,3) RC(1,4) RC(1,5) RC(1,6)
+            RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5) RC(2,6)
+            RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(3,6)
+            RC(4,0) RC(4,1) RC(4,2) RC(4,3) RC(4,4) RC(4,5) RC(4,6)
+        >;
+    };
 
-&display_layout {
-    compatible = "zmk,display-layout";
-    line-0 = "layer";
-    line-1 = "capslock_status";
-    line-2 = "battery_status";
-};
+    display_layout: display_layout {
+        compatible = "zmk,display-layout";
+        line-0 = "layer";
+        line-1 = "capslock_status";
+        line-2 = "battery_status";
+    };
 
-&chosen {
-    zmk,kscan = &kscan0;
-    zmk,matrix-transform = &matrix_transform;
-    zephyr,display = &nice_view_oled;
-    zmk,display-layout = &display_layout;
+    chosen {
+        zmk,kscan = &kscan0;
+        zmk,matrix-transform = &matrix_transform;
+        zephyr,display = &nice_view_oled;
+        zmk,display-layout = &display_layout;
+    };
 };
