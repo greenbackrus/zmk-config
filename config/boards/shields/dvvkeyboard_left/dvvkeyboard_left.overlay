@@ -32,9 +32,11 @@
     compatible = "nice,nice_nano_v2";
 };
 
-&zmk_config {
-    compatible = "zmk,config";
-    split-role = "left";  // или "right"
+/ {
+    zmk_config: zmk-config {
+        compatible = "zmk,config";
+        split-role = "left";  // или "right"
+    };
 };
 
 &kscan0 {
