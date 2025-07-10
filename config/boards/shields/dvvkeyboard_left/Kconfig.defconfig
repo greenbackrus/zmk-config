@@ -14,15 +14,15 @@ endif
 if LVGL
 
 config LV_Z_VDB_SIZE
-
+int
 default 32
 
 config LV_Z_DPI
-
+int
 default 148
 
 config LV_Z_BITS_PER_PIXEL
-
+int
 default 1
 
 choice LV_COLOR_DEPTH
