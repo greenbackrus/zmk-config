@@ -18,11 +18,11 @@
     pinctrl-0 = <&i2c1_default>;
     pinctrl-1 = <&i2c1_sleep>;
     pinctrl-names = "default", "sleep";
-    clock-frequency = <400000>;
+    clock-frequency = <100000>;
 
     nice_view_oled: ssd1306@3c {
         compatible = "sinowealth,sh1106";
-        reg = <0x3с>;
+        reg = <0x3c>;
         label = "SSD1306";
         width = <128>;
         height = <32>;
