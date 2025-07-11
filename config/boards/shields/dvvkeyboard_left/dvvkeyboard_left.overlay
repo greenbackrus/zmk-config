@@ -18,7 +18,7 @@
     pinctrl-0 = <&i2c1_default>;
     pinctrl-1 = <&i2c1_sleep>;
     pinctrl-names = "default", "sleep";
-    clock-frequency = <20000>;
+    clock-frequency = <400000>;
 
     nice_view_oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
