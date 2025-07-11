@@ -40,7 +40,7 @@
              *   1   2   3   4   5   6   7
              */
             bindings = <
-                &kp N1    &kp N2    &kp N3    &kp N4    &kp N5    &kp N6    &kp A
+                &bootloaderaaaa    &kp N2    &kp N3    &kp N4    &kp N5    &kp N6    &kp A
                 &kp TAB   &kp Q     &kp W     &kp E     &kp R     &kp T     &kp A
                 &kp LALT  &kp A     &kp S     &kp D     &kp F     &kp G     &kp A
                 &kp LCTRL &kp Z     &kp X     &kp C     &kp V     &kp B     &kp A
