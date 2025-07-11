@@ -1,35 +1,35 @@
 #include <dt-bindings/zmk/matrix_transform.h>
-// &pinctrl {
-//     i2c1_default: i2c1_default {
-//         group1 {
-//             psels = <NRF_PSEL(TWIM_SDA, 0, 20)>, <NRF_PSEL(TWIM_SCL, 0, 17)>;
-//         };
-//     };
-// };
+&pinctrl {
+    i2c1_default: i2c1_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 17)>, <NRF_PSEL(TWIM_SCL, 0, 20)>;
+        };
+    };
+};
 
-// &i2c1 {
-//     status = "okay";
-//     pinctrl-0 = <&i2c1_default>;
-//     pinctrl-names = "default";
-//     clock-frequency = <100000>;
+&i2c1 {
+    status = "okay";
+    pinctrl-0 = <&i2c1_default>;
+    pinctrl-names = "default";
+    clock-frequency = <100000>;
 
-//     nice_view_oled: ssd1306@3c {
-//         compatible = "solomon,ssd1306fb";
-//         reg = <0x3c>;
-//         label = "SSD1306";
-//         width = <128>;
-//         height = <32>;
-//         segment-offset = <0>;
-//         page-offset = <0>;
-//         display-offset = <0>;
-//         multiplex-ratio = <31>;
-//         prechargep = <0xF1>;
-//     };
-// };
+    nice_view_oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        label = "SSD1306";
+        width = <128>;
+        height = <32>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <31>;
+        prechargep = <0xF1>;
+    };
+};
 &pro_micro_i2c {
     status = "okay";
 
-     nice_view_oled: ssd1306@3c {
+    oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
         reg = <0x3c>;
         label = "DISPLAY";
@@ -69,7 +69,7 @@
             <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  // D6
             <&pro_micro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  // D7
             <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  // освободил место под экранчик
-            <&pro_micro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;  // освободил место под экранчик
+            <&pro_micro  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;  // освободил место под экранчик
 
         /* 7 столбцов: D10, D16, D14, D15, D18, D19, D20 */
         col-gpios = 
