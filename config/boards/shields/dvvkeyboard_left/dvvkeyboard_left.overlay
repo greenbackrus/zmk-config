@@ -35,10 +35,9 @@
 };
 / {
     default_oled_layout: display_layout {
-        compatible = "zmk,display-layout";
-        line-0 = "layer";
-        line-1 = "capslock_status";
-        line-2 = "battery_status";
+        compatible = "zmk,display-layout";  // Обязательно!
+        line-0 = "Hello";                  // Первая строка
+        line-1 = "ZMK!";                   // Вторая строка
         };
     chosen {
         zmk,kscan = &kscan0;
