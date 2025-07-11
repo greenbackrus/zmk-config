@@ -22,7 +22,7 @@
 
     nice_view_oled: ssd1306@3c {
         compatible = "sinowealth,sh1106";
-        reg = <0x3d>;
+        reg = <0x3с>;
         label = "SSD1306";
         width = <128>;
         height = <32>;
