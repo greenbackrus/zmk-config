@@ -25,13 +25,14 @@
         reg = <0x3c>;
         width = <128>;
         height = <32>;
-        segment-offset = <30>;
-        page-offset = <5>;
-        display-offset = <10>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
         multiplex-ratio = <31>;
         segment-remap;
         com-invdir;
         com-sequential;
+        inverse-display;
         prechargep = <0x22>;
     };
 };
