@@ -92,8 +92,6 @@
         display-name = "DVV Keyboard Left";
         kscan = <&kscan0>; // Label of the kscan node this layout uses
         transform = <&default_transform>; //
-        rows = <5>;
-        cols = <7>;
 
         row-gpios = 
             <&pro_micro 9 GPIO_ACTIVE_HIGH>,
