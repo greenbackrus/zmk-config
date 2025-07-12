@@ -89,6 +89,7 @@
     };
     layout: physical_layout {
         compatible = "zmk,physical-layout";
+        display-name = "DVV Keyboard Left";
         rows = <5>;
         cols = <7>;
 
