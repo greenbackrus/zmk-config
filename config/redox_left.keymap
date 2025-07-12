@@ -10,7 +10,9 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/outputs.h>
 &nice_view_oled {
-    label = "nice_view";
+        compatible = "zmk,nice-view";
+        label = "Nice View";
+        status = "okay";
 };
 / {
     display_text {

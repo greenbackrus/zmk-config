@@ -1,5 +1,27 @@
 #include <dt-bindings/zmk/matrix_transform.h>
+&i2c0 {
+    status = "okay";
+    nice_view_oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <64>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <63>;
+        segment-remap = <1>;
+        prechargep = <0xF1>;
+        com-invert = <0>;
+        vcomdeselect = <0x40>;
+        i2c-max-frequency = <I2C_BITRATE_FAST>;
+        // reset-gpios = <&gpio0 10 GPIO_ACTIVE_LOW>; // если используешь RESET
+    };
+};
 
+&i2c1 {
+    status = "disabled";
+};
 / {
     chosen {
         zmk,kscan = &kscan0;
@@ -42,18 +64,18 @@
     };
 };
 
-&i2c0 {
-    status = "okay";
-    nice_view_oled: ssd1306@3c {
-        compatible = "solomon,ssd1306fb";
-        reg = <0x3c>;
-        width = <128>;
-        height = <64>;
-        segment-offset = <0>;
-        page-offset = <0>;
-        display-offset = <0>;
-        multiplex-ratio = <31>;
-        prechargep = <0x22>;
-        // reset-gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
-    };
-};
+//&i2c0 {
+//    status = "okay";
+//    nice_view_oled: ssd1306@3c {
+//        compatible = "solomon,ssd1306fb";
+//        reg = <0x3c>;
+//        width = <128>;
+//        height = <64>;
+//        segment-offset = <0>;
+//        page-offset = <0>;
+//        display-offset = <0>;
+//        multiplex-ratio = <31>;
+//        prechargep = <0x22>;
+//       // reset-gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
+//    };
+//};
