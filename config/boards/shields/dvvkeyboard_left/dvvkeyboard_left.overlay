@@ -35,6 +35,7 @@
         prechargep = <0x22>;
     };
 };
+/ {
     chosen {
         zmk,kscan = &kscan0;
         zmk,matrix-transform = &default_transform;
