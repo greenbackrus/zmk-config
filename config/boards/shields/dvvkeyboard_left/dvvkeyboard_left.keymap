@@ -12,11 +12,6 @@
 &nice_view_oled {
     label = "nice_view";
 };
-&mod_morph LCTL {
-    mods = <(MOD_LCTL | MOD_LSFT)>;
-    bindings = <&bootloader>;
-    base_binding = <&kp TAB>;
-};
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -42,7 +37,7 @@
              */
             bindings = <
                 &bootloader             &kp N2    &kp N3    &kp N4    &kp N5    &kp N6    &kp A
-                &ctl_shift_tab_morph    &kp Q     &kp W     &kp E     &kp R     &kp T     &kp A
+                &kp TAB    &kp Q     &kp W     &kp E     &kp R     &kp T     &kp A
                 &kp LALT                &kp A     &kp S     &kp D     &kp F     &kp G     &kp A
                 &kp LCTRL               &kp Z     &kp X     &kp C     &kp V     &kp B     &kp A
                 &kp LSHIFT              &kp A   &kp A    &kp A    &kp DEL   &kp ESC   &kp A
