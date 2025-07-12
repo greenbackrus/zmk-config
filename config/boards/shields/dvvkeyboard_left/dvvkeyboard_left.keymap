@@ -16,7 +16,8 @@
     mods = <(MOD_LCTL | MOD_LSFT)>;
     bindings = <&bootloader>;
     base_binding = <&kp TAB>;
-}
+};
+/ {
     keymap {
         compatible = "zmk,keymap";
 
