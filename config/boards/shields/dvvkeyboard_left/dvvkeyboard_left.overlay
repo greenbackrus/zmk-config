@@ -35,17 +35,10 @@
         prechargep = <0x22>;
     };
 };
-/ {
-    default_oled_layout: display_layout {
-        compatible = "zmk,display-layout";  // Обязательно!
-        line-0 = "Hello";                  // Первая строка
-        line-1 = "ZMK!";                   // Вторая строка
-        };
     chosen {
         zmk,kscan = &kscan0;
         zmk,matrix-transform = &default_transform;
         zephyr,display = &nice_view_oled;
-        zmk,display-layout = &default_oled_layout;
     };
 
     kscan0: kscan {
