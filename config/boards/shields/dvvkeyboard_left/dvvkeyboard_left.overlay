@@ -93,7 +93,7 @@
         };
         ctl_shift_tab_morph: mod_morph {
             compatible = "zmk,behavior-mod-morph";
-            mods = <MOD_LCTL MOD_LSFT>;
+            mods = <(MOD_LCTL | MOD_LSFT)>;
             bindings = <&bootloader>;
             base_binding = <&kp TAB>;
         };
