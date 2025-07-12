@@ -42,6 +42,8 @@
         //zmk,matrix-transform = &default_transform;
         zephyr,display = &nice_view_oled;
     };
+      zmk,keyboard-id = "dvvkeyboard_left";
+      zmk,layout = "default";
 
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
