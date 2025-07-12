@@ -12,11 +12,11 @@
 &nice_view_oled {
     label = "nice_view";
 };
-/ {
-//    display_text {
-//        compatible = "zmk,display-text";
-//        text = "Redox Left";
-//    };
+&mod_morph LCTL {
+    mods = <(MOD_LCTL | MOD_LSFT)>;
+    bindings = <&bootloader>;
+    base_binding = <&kp TAB>;
+}
     keymap {
         compatible = "zmk,keymap";
 
