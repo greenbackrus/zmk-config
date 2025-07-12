@@ -29,7 +29,7 @@
         page-offset = <5>;
         display-offset = <10>;
         multiplex-ratio = <31>;
-        segment-remap=<1>;
+        segment-remap;
         com-invdir;
         com-sequential;
         prechargep = <0x22>;
