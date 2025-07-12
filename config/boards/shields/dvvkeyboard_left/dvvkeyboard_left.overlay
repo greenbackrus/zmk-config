@@ -26,10 +26,10 @@
         width = <128>;
         height = <32>;
         segment-offset = <30>;
-        page-offset = <3>;
+        page-offset = <5>;
         display-offset = <10>;
         multiplex-ratio = <31>;
-        segment-remap;
+        segment-remap=<1>;
         com-invdir;
         com-sequential;
         prechargep = <0x22>;
