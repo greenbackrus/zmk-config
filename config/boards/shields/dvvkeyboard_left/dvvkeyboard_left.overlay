@@ -130,8 +130,6 @@
             , <&key_physical_attrs 100 100  600  400       0     0     0>
             ;
     };
-};
-    };
 
     zmk,physical-layout = &layout;
 };
