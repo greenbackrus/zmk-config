@@ -138,7 +138,7 @@
         bindings = <&to 1>, <&bt BT_SEL 0>;
     };
 
-    behavior_layer2_bt1: layer2_bt1 {
+    behavior_layer3_bt2: layer3_bt2 {
         compatible = "zmk,behavior-hold-tap";
         #binding-cells = <0>;
         label = "Layer3 or BT2";
