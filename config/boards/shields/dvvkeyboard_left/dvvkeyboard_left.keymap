@@ -40,27 +40,24 @@
         flavor = "hold-preferred";
         bindings = <&kp TILDE>, <&bootloader>;
     };
-
-/ {
-    aliases {
-        mt_1 = &layer1_usb;
-        mt_2 = &layer2_bt1;
-        mt_3 = &layer3_bt2;
-        ti_bt = &tilda_boot;
-    };
     behavior_layer1_usb: layer1_usb {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <0>;
-    label = "Layer1 or USB";
-    tapping-term-ms = <200>;
-    quick-tap-ms = <150>;
-    flavor = "hold-preferred";
-    bindings = <&to 0>, <&usb>;
-};
-
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <0>;
+        label = "Layer1 or USB";
+        tapping-term-ms = <200>;
+        quick-tap-ms = <150>;
+        flavor = "hold-preferred";
+        bindings = <&to 0>, <&usb>;
+    };
+/ {
     keymap {
         compatible = "zmk,keymap";
-
+        aliases {
+            mt_1 = &layer1_usb;
+            mt_2 = &layer2_bt1;
+            mt_3 = &layer3_bt2;
+            ti_bt = &tilda_boot;
+        };
         default_layer {
             /*
              * Левая половинка клавиатуры (7x5)
