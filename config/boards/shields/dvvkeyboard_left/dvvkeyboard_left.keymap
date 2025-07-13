@@ -14,6 +14,7 @@
 };
 
 / {
+    behaviors {
     behavior_layer2_bt1: layer2_bt1 {
         compatible = "zmk,behavior-hold-tap";
         #binding-cells = <0>;
@@ -50,6 +51,7 @@
         quick-tap-ms = <150>;
         flavor = "hold-preferred";
         bindings = <&to 0>, <&usb>;
+    };
     };
     keymap {
         compatible = "zmk,keymap";
