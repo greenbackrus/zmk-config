@@ -87,6 +87,9 @@
         compatible = "zmk,config";
         split-role = "left";  // или "right"
     };
+    key_physical_attrs: key_physical_attrs {
+        compatible = "zmk,key-physical-attrs";
+    };
     layout: physical_layout {
         compatible = "zmk,physical-layout";
         display-name = "DVV Keyboard Left";
