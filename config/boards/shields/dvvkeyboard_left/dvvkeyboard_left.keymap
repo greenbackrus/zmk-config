@@ -12,6 +12,8 @@
 &nice_view_oled {
     label = "nice_view";
 };
+
+/ {
     behavior_layer2_bt1: layer2_bt1 {
         compatible = "zmk,behavior-hold-tap";
         #binding-cells = <0>;
@@ -49,7 +51,6 @@
         flavor = "hold-preferred";
         bindings = <&to 0>, <&usb>;
     };
-/ {
     keymap {
         compatible = "zmk,keymap";
         aliases {
