@@ -12,6 +12,44 @@
 &nice_view_oled {
     label = "nice_view";
 };
+behavior_layer1_usb: layer1_usb {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <0>;
+    label = "Layer1 or USB";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <150>;
+    flavor = "hold-preferred";
+    bindings = <&to 0>, <&usb>;
+};
+
+behavior_layer2_bt1: layer2_bt1 {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <0>;
+        label = "Layer2 or BT1";
+        tapping-term-ms = <800>;
+        quick-tap-ms = <300>;
+        flavor = "hold-preferred";
+        bindings = <&to 1>, <&bt BT_SEL 0>;
+};
+
+behavior_layer3_bt2: layer3_bt2 {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <0>;
+        label = "Layer3 or BT2";
+        tapping-term-ms = <800>;
+        quick-tap-ms = <300>;
+        flavor = "hold-preferred";
+        bindings = <&to 2>, <&bt BT_SEL 1>;
+};
+behavior_tilda_bootloader: tilda_boot {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <0>;
+        label = "Tilda or bootloader";
+        tapping-term-ms = <5000>;
+        quick-tap-ms = <150>;
+        flavor = "hold-preferred";
+        bindings = <&kp TILDE>, <&bootloader>;
+};
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -19,6 +57,7 @@
             mt_1 = &layer1_usb;
             mt_2 = &layer2_bt1;
             mt_3 = &layer3_bt2;
+            ti_bt = &tilda_boot;
         };
 
         default_layer {
@@ -41,11 +80,11 @@
              *   1   2   3   4   5   6   7
              */
             bindings = <
-                &bootloader             &kp N1    &kp N2    &kp N3    &kp N4    &kp N5    &kp 6
+                &ti_bt                  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5    &kp 6
                 &kp TAB                 &kp Q     &kp W     &kp E     &kp R     &kp T     &kp I
                 &kp LALT                &kp A     &kp S     &kp D     &kp F     &kp G     &kp L
                 &kp LCTRL               &kp Z     &kp X     &kp C     &kp V     &kp B     &kp M
-                &kp ESC                 &kp N2    &kp N3    &to 2    &to 1    &to 0   &kp LSHIFT
+                &kp ESC                 &kp N2    &kp N3    &mt_3     &mt_2     &mt_1   &kp LSHIFT
             >;
         };
 
@@ -117,34 +156,5 @@
                 &trans    &trans    &trans    &trans    &trans    &trans    &trans
             >;
         };
-    };
-    behavior_layer1_usb: layer1_usb {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <0>;
-    label = "Layer1 or USB";
-    tapping-term-ms = <200>;
-    quick-tap-ms = <150>;
-    flavor = "hold-preferred";
-    bindings = <&to 0>, <&usb>;
-    };
-
-    behavior_layer2_bt1: layer2_bt1 {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <0>;
-        label = "Layer2 or BT1";
-        tapping-term-ms = <800>;
-        quick-tap-ms = <300>;
-        flavor = "hold-preferred";
-        bindings = <&to 1>, <&bt BT_SEL 0>;
-    };
-
-    behavior_layer3_bt2: layer3_bt2 {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <0>;
-        label = "Layer3 or BT2";
-        tapping-term-ms = <800>;
-        quick-tap-ms = <300>;
-        flavor = "hold-preferred";
-        bindings = <&to 2>, <&bt BT_SEL 1>;
     };
 };
