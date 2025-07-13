@@ -36,7 +36,21 @@
         prechargep = <0x22>;
     };
 };
+&zephyr_udc0 {
+    cdc_acm_uart {
+        compatible = "zephyr,cdc-acm-uart";
+        label = "CDC_ACM_0";
+    };
+};
+
 / {
+    usb_device {
+        product = "DVV Keyboard Left";
+        manufacturer = "Victor";
+        vid = <0x1209>;
+        pid = <0x0001>;
+    };
+
     chosen {
         zmk,kscan = &kscan0;
         //zmk,matrix-transform = &default_transform;
