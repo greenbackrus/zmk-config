@@ -15,6 +15,11 @@
 / {
     keymap {
         compatible = "zmk,keymap";
+        aliases {
+            mt_1 = &layer1_usb;
+            mt_2 = &layer2_bt1;
+            mt_3 = &layer3_bt2;
+        };
 
         default_layer {
             /*
@@ -112,5 +117,34 @@
                 &trans    &trans    &trans    &trans    &trans    &trans    &trans
             >;
         };
+    };
+    behavior_layer1_usb: layer1_usb {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <0>;
+    label = "Layer1 or USB";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <150>;
+    flavor = "hold-preferred";
+    bindings = <&to 0>, <&usb>;
+    };
+
+    behavior_layer2_bt1: layer2_bt1 {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <0>;
+        label = "Layer2 or BT1";
+        tapping-term-ms = <800>;
+        quick-tap-ms = <300>;
+        flavor = "hold-preferred";
+        bindings = <&to 1>, <&bt BT_SEL 0>;
+    };
+
+    behavior_layer2_bt1: layer2_bt1 {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <0>;
+        label = "Layer3 or BT2";
+        tapping-term-ms = <800>;
+        quick-tap-ms = <300>;
+        flavor = "hold-preferred";
+        bindings = <&to 2>, <&bt BT_SEL 1>;
     };
 };
