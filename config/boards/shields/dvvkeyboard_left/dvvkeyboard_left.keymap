@@ -56,12 +56,6 @@
     };
     keymap {
         compatible = "zmk,keymap";
-        aliases {
-            mt_1 = &layer1_usb;
-            mt_2 = &layer2_bt1;
-            mt_3 = &layer3_bt2;
-            ti_bt = &tilda_boot;
-        };
         default_layer {
             /*
              * Левая половинка клавиатуры (7x5)
@@ -82,11 +76,11 @@
              *   1   2   3   4   5   6   7
              */
             bindings = <
-                &ti_bt                  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5    &kp 6
+                &tilda_boot                  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5    &kp 6
                 &kp TAB                 &kp Q     &kp W     &kp E     &kp R     &kp T     &kp I
                 &kp LALT                &kp A     &kp S     &kp D     &kp F     &kp G     &kp L
                 &kp LCTRL               &kp Z     &kp X     &kp C     &kp V     &kp B     &kp M
-                &kp ESC                 &kp N2    &kp N3    &mt_3     &mt_2     &mt_1   &kp LSHIFT
+                &kp ESC                 &kp N2    &kp N3    &layer3_bt2     &layer2_bt1     &layer1_usb   &kp LSHIFT
             >;
         };
 
