@@ -51,7 +51,7 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
             flavor = "hold-preferred";
-            bindings = <&to 0>, <&usb>;
+            bindings = <&to 0>, <&out OUT_TOG>;
         };
     };
     keymap {
