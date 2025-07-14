@@ -44,7 +44,7 @@
             flavor = "hold-preferred";
             bindings = <&kp TILDE>, <&bootloader>;
         };
-        behavior_layer1_usb: layer1_usb {
+        layer1_usb: layer1_usb {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <0>;
             label = "Layer1 or USB";
