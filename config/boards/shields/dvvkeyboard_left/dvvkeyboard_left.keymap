@@ -15,47 +15,48 @@
 };
 
 / {
-    behaviors {
-    	layer2_bt1: layer2_bt1 {
-        	compatible = "zmk,behavior-hold-tap";
-        	#binding-cells = <0>;
-        	label = "Layer2 or BT1";
-        	tapping-term-ms = <800>;
-        	quick-tap-ms = <300>;
-        	flavor = "hold-preferred";
-        	bindings = <&to 1 &bt BT_SEL 0>;
-    	};
+     behaviors {
+        layer2_bt1: layer2_bt1 {
+                compatible = "zmk,behavior-hold-tap";
+                #binding-cells = <0>;
+                label = "Layer2 or BT1";
+                tapping-term-ms = <800>;
+                quick-tap-ms = <300>;
+                flavor = "hold-preferred";
+                bindings = <&to 1 &bt BT_SEL 0>;
+        };
 
-    	layer3_bt2: layer3_bt2 {
-        	compatible = "zmk,behavior-hold-tap";
-        	#binding-cells = <0>;
-        	label = "Layer3 or BT2";
-       		tapping-term-ms = <800>;
-        	quick-tap-ms = <300>;
-        	flavor = "hold-preferred";
-        	bindings = <&to 2 &bt BT_SEL 1>;
-    	};
+        layer3_bt2: layer3_bt2 {
+                compatible = "zmk,behavior-hold-tap";
+                #binding-cells = <0>;
+                label = "Layer3 or BT2";
+                tapping-term-ms = <800>;
+                quick-tap-ms = <300>;
+                flavor = "hold-preferred";
+                bindings = <&to 2 &bt BT_SEL 1>;
+        };
 
-    	tilda_boot: tilda_boot {
-        	compatible = "zmk,behavior-hold-tap";
-       		#binding-cells = <0>;
-        	label = "Tilda or bootloader";
-        	tapping-term-ms = <5000>;
-        	quick-tap-ms = <150>;
-        	flavor = "hold-preferred";
-        	bindings = <&kp TILDE &bootloader>;
-    	};
+        tilda_boot: tilda_boot {
+                compatible = "zmk,behavior-hold-tap";
+                #binding-cells = <0>;
+                label = "Tilda or bootloader";
+                tapping-term-ms = <5000>;
+                quick-tap-ms = <150>;
+                flavor = "hold-preferred";
+                bindings = <&kp TILDE &bootloader>;
+        };
 
-    	layer1_usb: layer1_usb {
-        	compatible = "zmk,behavior-hold-tap";
-        	#binding-cells = <0>;
-       		label = "Layer1 or USB";
-        	tapping-term-ms = <200>;
-        	quick-tap-ms = <150>;
-        	flavor = "hold-preferred";
-        	bindings = <&to 0 &out OUT_TOG>;
-    	};
+        layer1_usb: layer1_usb {
+                compatible = "zmk,behavior-hold-tap";
+                #binding-cells = <0>;
+                label = "Layer1 or USB";
+                tapping-term-ms = <200>;
+                quick-tap-ms = <150>;
+                flavor = "hold-preferred";
+                bindings = <&to 0 &out OUT_TOG>;
+        };
     };
+    
     keymap {
         compatible = "zmk,keymap";
         default_layer {
