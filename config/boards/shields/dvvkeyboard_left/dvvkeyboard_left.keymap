@@ -15,6 +15,17 @@
 };
 
 / {
+    behaviors {
+        tbl: tilda_bootloader {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <3000>;
+            quick-tap-ms = <0>;
+            bindings = <&kp>, <&bootloader>;
+        };
+        
+    };
     keymap {
         compatible = "zmk,keymap";
         default_layer {
@@ -37,7 +48,7 @@
              *   1   2   3   4   5   6   7
              */
             bindings = <
-                &ht TILDE bootloader 3000    &kp N1    &kp N2    &kp N3 		                &kp N4    		            &kp N5    	            &kp 6
+                &tbl TILDE 0                    &kp N1    &kp N2    &kp N3 		                &kp N4    		            &kp N5    	            &kp 6
                 &kp TAB                         &kp Q     &kp W     &kp E  		                &kp R     		            &kp T     	            &kp I
                 &kp LALT                        &kp A     &kp S     &kp D  		                &kp F     		            &kp G     	            &kp L
                 &kp LCTRL                       &kp Z     &kp X     &kp C  		                &kp V     		            &kp B     	            &kp M
