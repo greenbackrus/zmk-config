@@ -16,14 +16,14 @@
 
 / {
     behaviors {
-        layer2_bt1: layer2_bt1 {
+          layer2_bt1: layer2_bt1 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <0>;
             label = "Layer2 or BT1";
             tapping-term-ms = <800>;
             quick-tap-ms = <300>;
             flavor = "hold-preferred";
-            bindings = <&to 1>, <&bt BT_SEL 0>;
+            bindings = <&to 1 &bt BT_SEL 0>;
         };
 
         layer3_bt2: layer3_bt2 {
@@ -52,7 +52,7 @@
             quick-tap-ms = <150>;
             flavor = "hold-preferred";
             bindings = <&to 0>, <&out OUT_TOG>;
-        };
+	};
     };
     keymap {
         compatible = "zmk,keymap";
