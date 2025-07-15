@@ -16,58 +16,68 @@
 
 / {
     macros {
-        otg: otg { bindings = <&out OUT_TOG>; };
-        bt0: bt0 { bindings = <&bt BT_SEL 0>; };
-        bt1: bt1 { bindings = <&bt BT_SEL 1>; };
+    otg: otg {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&out OUT_TOG>;  // Переключение USB/BT
+    };
+    bt0: bt0 {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&bt BT_SEL 0>;  // BT профиль 0
+    };
+    bt1: bt1 {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&bt BT_SEL 1>;  // BT профиль 1
+    };
+};
+
+behaviors {
+    // Версия для Bluetooth 0
+    l_bt0: l_bt0 {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        label = "Tap: Layer | Hold: BT0";
+        tapping-term-ms = <200>;     // Время для распознавания Hold
+        quick-tap-ms = <150>;        // Макс. время для Tap
+        flavor = "tap-preferred";    // Приоритет Tap (короткого нажатия)
+        bindings = <&bt0>, <&to>;    // Hold: BT0, Tap: слой
     };
 
-    behaviors {
-        l_bt0: l_bt0 {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            label = "Layer2 or BT1";
-            tapping-term-ms = <800>;
-            quick-tap-ms = <300>;
-            flavor = "hold-preferred";
-            bindings = <&to>, <&bt0>;
-            tap-hold-config = <0 1 0>; // Первый 0 - индекс тапа, 1 - индекс холда
-        };
-
-         l_bt1: l_bt {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            label = "Layer2 or BT1";
-            tapping-term-ms = <800>;
-            quick-tap-ms = <300>;
-            flavor = "hold-preferred";
-            bindings = <&to>, <&bt1>;
-            tap-hold-config = <0 1 0>; // Первый 0 - индекс тапа, 1 - индекс холда
-        };
-
-
-
-        k_boot: k_boot {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            label = "Tilda or bootloader";
-            tapping-term-ms = <5000>;
-            quick-tap-ms = <150>;
-            flavor = "hold-preferred";
-            bindings = <&kp>, <&bootloader>;
-            tap-hold-config = <0 1 0>;
-        };
-
-        l_out: layer_out {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            label = "Layer1 or USB";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-            flavor = "hold-preferred";
-            bindings = <&to>, <&otg>;
-            tap-hold-config = <0 1 0>;
-        };
+    // Версия для Bluetooth 1
+    l_bt1: l_bt1 {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        label = "Tap: Layer | Hold: BT1";
+        tapping-term-ms = <200>;
+        quick-tap-ms = <150>;
+        flavor = "tap-preferred";
+        bindings = <&bt1>, <&to>;    // Hold: BT1, Tap: слой
     };
+
+    // Для переключения USB/BT
+    l_out: l_out {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        label = "Tap: Layer | Hold: USB/BT";
+        tapping-term-ms = <200>;
+        quick-tap-ms = <150>;
+        flavor = "tap-preferred";
+        bindings = <&otg>, <&to>;   // Hold: USB/BT, Tap: слой
+    };
+
+    // Для загрузчика (долгое удержание)
+    k_boot: k_boot {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        label = "Tap: ~ | Hold: Bootloader";
+        tapping-term-ms = <5000>;    // Очень долгий Hold для bootloader
+        quick-tap-ms = <150>;
+        flavor = "tap-preferred";
+        bindings = <&bootloader>, <&kp TILDE>;  // Hold: bootloader, Tap: ~
+    };
+};
     keymap {
         compatible = "zmk,keymap";
         default_layer {
