@@ -24,7 +24,22 @@
             quick-tap-ms = <0>;
             bindings = <&kp>, <&bootloader>;
         };
-        
+        lout: layer_out {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <800>;
+            quick-tap-ms = <0>;
+            bindings = <&to>, <&out>;
+        };
+        lbt: layer_bluetooth {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <800>;
+            quick-tap-ms = <0>;
+            bindings = <&to>, <&bt>;
+        };
     };
     keymap {
         compatible = "zmk,keymap";
@@ -48,11 +63,11 @@
              *   1   2   3   4   5   6   7
              */
             bindings = <
-                &tbl TILDE 0                    &kp N1    &kp N2    &kp N3 		                &kp N4    		            &kp N5    	            &kp 6
-                &kp TAB                         &kp Q     &kp W     &kp E  		                &kp R     		            &kp T     	            &kp I
-                &kp LALT                        &kp A     &kp S     &kp D  		                &kp F     		            &kp G     	            &kp L
-                &kp LCTRL                       &kp Z     &kp X     &kp C  		                &kp V     		            &kp B     	            &kp M
-                &kp ESC                         &kp N2    &kp N3    &ht TO 1 OUT_TOG 800     	&ht TO 2 (BT_SEL 1) 800     	&ht TO 3 (BT_SEL 2) 800 	&kp LSHIFT
+                &tbl TILDE 0                    &kp N1    &kp N2    &kp N3 		        &kp N4    		            &kp N5    	            &kp 6
+                &kp TAB                         &kp Q     &kp W     &kp E  		        &kp R     		            &kp T     	            &kp I
+                &kp LALT                        &kp A     &kp S     &kp D  		        &kp F     		            &kp G     	            &kp L
+                &kp LCTRL                       &kp Z     &kp X     &kp C  		        &kp V     		            &kp B     	            &kp M
+                &kp ESC                         &kp N2    &kp N3    &lout 1 OUT_TOG 	&lbt 2 (BT_SEL 1)    	    &lbt 3 (BT_SEL 2)       &kp LSHIFT
             >;
         };
 
