@@ -38,7 +38,7 @@
             flavor = "balanced";
             tapping-term-ms = <800>;
             quick-tap-ms = <0>;
-            bindings = <&to>, <&bt>;
+            bindings = <&to>, <&bt BT_SEL 1>;
         };
     };
     keymap {
@@ -67,7 +67,7 @@
                 &kp TAB                         &kp Q     &kp W     &kp E  		        &kp R     		            &kp T     	            &kp I
                 &kp LALT                        &kp A     &kp S     &kp D  		        &kp F     		            &kp G     	            &kp L
                 &kp LCTRL                       &kp Z     &kp X     &kp C  		        &kp V     		            &kp B     	            &kp M
-                &kp ESC                         &kp N2    &kp N3    &lout 1 OUT_TOG 	&lbt 2 BT_SEL(1)            	    &lbt 3 BT_SEL(2)                &kp LSHIFT
+                &kp ESC                         &kp N2    &kp N3    &lout 1 OUT_TOG 	&lbt 2 0            	    &lbt 3 0                &kp LSHIFT
             >;
         };
 
