@@ -38,7 +38,7 @@
             flavor = "balanced";
             tapping-term-ms = <800>;
             quick-tap-ms = <0>;
-            bindings = <&to>, <&bt BT_SEL>;
+            bindings = <&to>, <(&bt BT_SEL)>;
         };
     };
     keymap {
