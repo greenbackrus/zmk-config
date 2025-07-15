@@ -15,69 +15,6 @@
 };
 
 / {
-    macros {
-    otg: otg {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings = <&out OUT_TOG>;  // Переключение USB/BT
-    };
-    bt0: bt0 {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings = <&bt BT_SEL 0>;  // BT профиль 0
-    };
-    bt1: bt1 {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings = <&bt BT_SEL 1>;  // BT профиль 1
-    };
-};
-
-behaviors {
-    // Версия для Bluetooth 0
-    l_bt0: l_bt0 {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        label = "Tap: Layer | Hold: BT0";
-        tapping-term-ms = <200>;     // Время для распознавания Hold
-        quick-tap-ms = <150>;        // Макс. время для Tap
-        flavor = "tap-preferred";    // Приоритет Tap (короткого нажатия)
-        bindings = <&bt0> <&to>;    // Hold: BT0, Tap: слой
-    };
-
-    // Версия для Bluetooth 1
-    l_bt1: l_bt1 {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        label = "Tap: Layer | Hold: BT1";
-        tapping-term-ms = <200>;
-        quick-tap-ms = <150>;
-        flavor = "tap-preferred";
-        bindings = <&bt1> <&to>;    // Hold: BT1, Tap: слой
-    };
-
-    // Для переключения USB/BT
-    l_out: l_out {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        label = "Tap: Layer | Hold: USB/BT";
-        tapping-term-ms = <200>;
-        quick-tap-ms = <150>;
-        flavor = "tap-preferred";
-        bindings = <&otg> <&to>;   // Hold: USB/BT, Tap: слой
-    };
-
-    // Для загрузчика (долгое удержание)
-    k_boot: k_boot {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        label = "Tap: ~ | Hold: Bootloader";
-        tapping-term-ms = <5000>;    // Очень долгий Hold для bootloader
-        quick-tap-ms = <150>;
-        flavor = "tap-preferred";
-        bindings = <&bootloader> <&kp TILDE>;  // Hold: bootloader, Tap: ~
-    };
-};
     keymap {
         compatible = "zmk,keymap";
         default_layer {
@@ -100,11 +37,11 @@ behaviors {
              *   1   2   3   4   5   6   7
              */
             bindings = <
-                &k_boot TILDE 0    &kp N1    &kp N2    &kp N3 		    &kp N4    		&kp N5    	&kp 6
-                &kp TAB            &kp Q     &kp W     &kp E  		    &kp R     		&kp T     	&kp I
-                &kp LALT           &kp A     &kp S     &kp D  		    &kp F     		&kp G     	&kp L
-                &kp LCTRL          &kp Z     &kp X     &kp C  		    &kp V     		&kp B     	&kp M
-                &kp ESC            &kp N2    &kp N3    &l_out 0 1     	&l_bt0 0 2   	&l_bt1 0 3 	&kp LSHIFT
+                &ht kp TILDE bootloader 3000    &kp N1    &kp N2    &kp N3 		                &kp N4    		            &kp N5    	            &kp 6
+                &kp TAB                         &kp Q     &kp W     &kp E  		                &kp R     		            &kp T     	            &kp I
+                &kp LALT                        &kp A     &kp S     &kp D  		                &kp F     		            &kp G     	            &kp L
+                &kp LCTRL                       &kp Z     &kp X     &kp C  		                &kp V     		            &kp B     	            &kp M
+                &kp ESC                         &kp N2    &kp N3    &ht TO 1 OUT_TOG 800     	&ht TO 2 BT_SEL 1 800     	&ht TO 3 BT_SEL 2 800 	&kp LSHIFT
             >;
         };
 
