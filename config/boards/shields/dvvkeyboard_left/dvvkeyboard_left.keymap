@@ -104,7 +104,7 @@ behaviors {
                 &kp TAB            &kp Q     &kp W     &kp E  		    &kp R     		&kp T     	&kp I
                 &kp LALT           &kp A     &kp S     &kp D  		    &kp F     		&kp G     	&kp L
                 &kp LCTRL          &kp Z     &kp X     &kp C  		    &kp V     		&kp B     	&kp M
-                &kp ESC            &kp N2    &kp N3    &l_out 1 0     	&l_bt0 2 0   	&l_bt1 3 0 	&kp LSHIFT
+                &kp ESC            &kp N2    &kp N3    &l_out 0 1     	&l_bt0 0 2   	&l_bt1 0 3 	&kp LSHIFT
             >;
         };
 
