@@ -42,7 +42,7 @@ behaviors {
         tapping-term-ms = <200>;     // Время для распознавания Hold
         quick-tap-ms = <150>;        // Макс. время для Tap
         flavor = "tap-preferred";    // Приоритет Tap (короткого нажатия)
-        bindings = <&bt0>, <&to>;    // Hold: BT0, Tap: слой
+        bindings = <&bt0> <&to>;    // Hold: BT0, Tap: слой
     };
 
     // Версия для Bluetooth 1
@@ -53,7 +53,7 @@ behaviors {
         tapping-term-ms = <200>;
         quick-tap-ms = <150>;
         flavor = "tap-preferred";
-        bindings = <&bt1>, <&to>;    // Hold: BT1, Tap: слой
+        bindings = <&bt1> <&to>;    // Hold: BT1, Tap: слой
     };
 
     // Для переключения USB/BT
@@ -64,7 +64,7 @@ behaviors {
         tapping-term-ms = <200>;
         quick-tap-ms = <150>;
         flavor = "tap-preferred";
-        bindings = <&otg>, <&to>;   // Hold: USB/BT, Tap: слой
+        bindings = <&otg> <&to>;   // Hold: USB/BT, Tap: слой
     };
 
     // Для загрузчика (долгое удержание)
@@ -75,7 +75,7 @@ behaviors {
         tapping-term-ms = <5000>;    // Очень долгий Hold для bootloader
         quick-tap-ms = <150>;
         flavor = "tap-preferred";
-        bindings = <&bootloader>, <&kp TILDE>;  // Hold: bootloader, Tap: ~
+        bindings = <&bootloader> <&kp TILDE>;  // Hold: bootloader, Tap: ~
     };
 };
     keymap {
