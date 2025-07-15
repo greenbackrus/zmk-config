@@ -38,7 +38,7 @@
         #binding-cells = <2>;
         label = "Tilda or bootloader";
         tapping-term-ms = <5000>;
-        quick-tap-ms = ш<150>;
+        quick-tap-ms = <150>;
         flavor = "hold-preferred";
         bindings = <&kp>, <&bootloader>;
         tap-hold-config = <0 1 0>;
