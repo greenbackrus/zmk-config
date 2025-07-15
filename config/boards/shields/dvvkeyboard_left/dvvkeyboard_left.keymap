@@ -21,40 +21,40 @@
     };
 
     behaviors {
-    l_bt: l_bt {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        label = "Layer2 or BT1";
-        tapping-term-ms = <800>;
-        quick-tap-ms = <300>;
-        flavor = "hold-preferred";
-        bindings = <&to>, <&macro>;
-        tap-hold-config = <0 1 0>; // Первый 0 - индекс тапа, 1 - индекс холда
-    };
+        l_bt: l_bt {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            label = "Layer2 or BT1";
+            tapping-term-ms = <800>;
+            quick-tap-ms = <300>;
+            flavor = "hold-preferred";
+            bindings = <&to>, <&macro>;
+            tap-hold-config = <0 1 0>; // Первый 0 - индекс тапа, 1 - индекс холда
+        };
 
 
-    k_boot: k_boot {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        label = "Tilda or bootloader";
-        tapping-term-ms = <5000>;
-        quick-tap-ms = <150>;
-        flavor = "hold-preferred";
-        bindings = <&kp>, <&bootloader>;
-        tap-hold-config = <0 1 0>;
-    };
+        k_boot: k_boot {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            label = "Tilda or bootloader";
+            tapping-term-ms = <5000>;
+            quick-tap-ms = <150>;
+            flavor = "hold-preferred";
+            bindings = <&kp>, <&bootloader>;
+            tap-hold-config = <0 1 0>;
+        };
 
-    l_out: layer_out {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        label = "Layer1 or USB";
-        tapping-term-ms = <200>;
-        quick-tap-ms = <150>;
-        flavor = "hold-preferred";
-        bindings = <&to>, <&out>;
-        tap-hold-config = <0 1 0>;
+        l_out: layer_out {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            label = "Layer1 or USB";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "hold-preferred";
+            bindings = <&to>, <&out>;
+            tap-hold-config = <0 1 0>;
+        };
     };
-};
     keymap {
         compatible = "zmk,keymap";
         default_layer {
@@ -77,11 +77,11 @@
              *   1   2   3   4   5   6   7
              */
             bindings = <
-                &k_boot TILDA      &kp N1    &kp N2    &kp N3 		&kp N4    		&kp N5    	&kp 6
-                &kp TAB            &kp Q     &kp W     &kp E  		&kp R     		&kp T     	&kp I
-                &kp LALT           &kp A     &kp S     &kp D  		&kp F     		&kp G     	&kp L
-                &kp LCTRL          &kp Z     &kp X     &kp C  		&kp V     		&kp B     	&kp M
-                &kp ESC            &kp N2    &kp N3    &l_out 1 OUT_TOG	&l_bt 2 &bt0       	&l_bt 3 &t1   	&kp LSHIFT
+                &k_boot TILDE 0    &kp N1    &kp N2    &kp N3 		    &kp N4    		&kp N5    	&kp 6
+                &kp TAB            &kp Q     &kp W     &kp E  		    &kp R     		&kp T     	&kp I
+                &kp LALT           &kp A     &kp S     &kp D  		    &kp F     		&kp G     	&kp L
+                &kp LCTRL          &kp Z     &kp X     &kp C  		    &kp V     		&kp B     	&kp M
+                &kp ESC            &kp N2    &kp N3    &l_out 1 OUT_TOG	&l_bt 2 &bt0   	&l_bt 3 &t1   	&kp LSHIFT
             >;
         };
 
