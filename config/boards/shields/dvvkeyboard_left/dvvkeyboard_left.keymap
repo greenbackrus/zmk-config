@@ -16,21 +16,34 @@
 
 / {
     macros {
+        otg: otg { bindings = <&out OUT_TOG>; };
         bt0: bt0 { bindings = <&bt BT_SEL 0>; };
         bt1: bt1 { bindings = <&bt BT_SEL 1>; };
     };
 
     behaviors {
-        l_bt: l_bt {
+        l_bt0: l_bt0 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             label = "Layer2 or BT1";
             tapping-term-ms = <800>;
             quick-tap-ms = <300>;
             flavor = "hold-preferred";
-            bindings = <&to>, <&macro>;
+            bindings = <&to>, <&bt0>;
             tap-hold-config = <0 1 0>; // Первый 0 - индекс тапа, 1 - индекс холда
         };
+
+         l_bt1: l_bt {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            label = "Layer2 or BT1";
+            tapping-term-ms = <800>;
+            quick-tap-ms = <300>;
+            flavor = "hold-preferred";
+            bindings = <&to>, <&bt1>;
+            tap-hold-config = <0 1 0>; // Первый 0 - индекс тапа, 1 - индекс холда
+        };
+
 
 
         k_boot: k_boot {
@@ -51,7 +64,7 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
             flavor = "hold-preferred";
-            bindings = <&to>, <&out>;
+            bindings = <&to>, <&otg>;
             tap-hold-config = <0 1 0>;
         };
     };
@@ -81,7 +94,7 @@
                 &kp TAB            &kp Q     &kp W     &kp E  		    &kp R     		&kp T     	&kp I
                 &kp LALT           &kp A     &kp S     &kp D  		    &kp F     		&kp G     	&kp L
                 &kp LCTRL          &kp Z     &kp X     &kp C  		    &kp V     		&kp B     	&kp M
-                &kp ESC            &kp N2    &kp N3    &l_out 1 OUT_TOG	&l_bt 2 &bt0   	&l_bt 3 &t1   	&kp LSHIFT
+                &kp ESC            &kp N2    &kp N3    &l_out 1 0     	&l_bt 2 0   	&l_bt 3 0  	&kp LSHIFT
             >;
         };
 
