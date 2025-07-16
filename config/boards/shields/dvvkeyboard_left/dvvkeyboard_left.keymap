@@ -38,10 +38,10 @@
              */
             bindings = <
                 &bootloader                     &kp N1          &kp N2    &kp N3 		        &kp N4    		            &kp N5    	            &kp 6
-                &reset                         &kp Q           &kp W     &kp E  		        &kp R     		            &kp T     	            &kp I
+                &reset                          &kp Q           &kp W     &kp E  		        &kp R     		            &kp T     	            &kp I
                 &kp LALT                        &kp A           &kp S     &kp D  		        &kp F     		            &kp G     	            &kp L
                 &kp LCTRL                       &kp Z           &kp X     &kp C  		        &kp V     		            &kp B     	            &kp M
-                &kp ESC                         &bt BT_CLR      &kp N3    &out OUT_TOG     	&bt BT_SEL 0                &bt BT_SEL 1                &kp LSHIFT
+                &kp ESC                         &bt BT_CLR      &kp N3    &out OUT_TOG      	&bt BT_SEL 0                &bt BT_SEL 1            &kp LSHIFT
             >;
         };
 
