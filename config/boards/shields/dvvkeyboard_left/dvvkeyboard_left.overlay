@@ -86,9 +86,6 @@
     
     };
 
-    default_transform: matrix_transform {
-        compatible = "zmk,matrix-transform";
-    };
     zmk_config: zmk-config {
         compatible = "zmk,config";
         split-role = "left";  // или "right"
