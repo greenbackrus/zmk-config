@@ -5,7 +5,7 @@
         zmk,kscan = &kscan0;
     };
 
-    zmk,keyboard-id = "dvvkeyboard_right";
+    zmk,keyboard-id = "dvvkeyb_right";
     zmk,layout = "default";
 
     kscan0: kscan {

@@ -1,5 +1,5 @@
-config SHIELD_DVVKEYBOARD_LEFT
-    def_bool $(shields_list_contains, dvvkeyboard_left)
+config SHIELD_DVVKEYB_LEFT
+    def_bool $(shields_list_contains, dvvkeyb_left)
 
-config SHIELD_DVVKEYBOARD_RIGHT
-    def_bool $(shields_list_contains, dvvkeyboard_right)
+config SHIELD_DVVKEYB_RIGHT
+    def_bool $(shields_list_contains, dvvkeyb_right)

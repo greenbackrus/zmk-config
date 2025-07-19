@@ -1,15 +1,15 @@
-if SHIELD_DVVKEYBOARD_LEFT
+if SHIELD_DVVKEYB_LEFT
 
-config ZMK_KEYBOARD_NAME
+config ZMK_DVVKEYB_LEFT
     default "DVV"
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
 endif
 
-if SHIELD_DVVKEYBOARD_RIGHT
+if SHIELD_DVVKEYB_RIGHT
 
-config ZMK_KEYBOARD_NAME
+config ZMK_DVVKEYB_RIGHT
     default "DVV_right"
 config ZMK_SPLIT
     default y

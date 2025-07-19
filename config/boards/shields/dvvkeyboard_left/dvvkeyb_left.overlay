@@ -56,7 +56,7 @@
         zmk,kscan = &kscan0;
         zephyr,display = &nice_view_oled;
     };
-      zmk,keyboard-id = "dvvkeyboard_left";
+      zmk,keyboard-id = "dvvkeyb_left";
       zmk,layout = "default";
 
     kscan0: kscan {
