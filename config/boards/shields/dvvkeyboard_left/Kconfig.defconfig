@@ -3,8 +3,8 @@ if SHIELD_DVVKEYB_LEFT
 config ZMK_DVVKEYB_LEFT
     default "DVV"
 config ZMK_SPLIT_ROLE_CENTRAL
+    bool
     default y
-
 endif
 
 if SHIELD_DVVKEYB_RIGHT
@@ -12,6 +12,7 @@ if SHIELD_DVVKEYB_RIGHT
 config ZMK_DVVKEYB_RIGHT
     default "DVV_right"
 config ZMK_SPLIT
+    bool
     default y
 
 endif
@@ -19,9 +20,11 @@ endif
 if ZMK_DISPLAY
 
 config I2C
+    bool
     default y
 
 config SSD1306
+    bool
     default y
 
 endif # ZMK_DISPLAY
