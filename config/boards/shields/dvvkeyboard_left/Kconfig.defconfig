@@ -1,37 +1,21 @@
 if SHIELD_DVVKEYBOARD_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "DVV Keyboard Left"
+    default "DVV"
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
 
 endif
 
 if SHIELD_DVVKEYBOARD_RIGHT
 
 config ZMK_KEYBOARD_NAME
-    default "DVV Keyboard Right"
+    default "DVV_right"
+config ZMK_SPLIT
+    default y
 
 endif
-if LVGL
 
-config LV_Z_VDB_SIZE
-int
-default 32
-
-config LV_Z_DPI
-int
-default 148
-
-config LV_Z_BITS_PER_PIXEL
-int
-default 1
-
-choice LV_COLOR_DEPTH
-
-default LV_COLOR_DEPTH_1
-
-endchoice
-
-endif # LVGL
 if ZMK_DISPLAY
 
 config I2C

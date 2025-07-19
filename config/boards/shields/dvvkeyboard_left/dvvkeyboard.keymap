@@ -1,0 +1,32 @@
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+        default_layer {
+            /*
+             * Левая половинка клавиатуры (7x5)
+             * Столбцы: 1-7 (от центра к краям)
+             * Ряды: 1-5 (сверху вниз)
+             * 
+             * ┌───┬───┬───┬───┬───┬───┬───┐
+             * │ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │   │  <- Ряд 1
+             * ├───┼───┼───┼───┼───┼───┤   │
+             * │TAB│ Q │ W │ E │ R │ T │   │  <- Ряд 2 (QWERTY)
+             * ├───┼───┼───┼───┼───┼───┤   │
+             * │ALT│ A │ S │ D │ F │ G │   │  <- Ряд 3 (QWERTY)
+             * ├───┼───┼───┼───┼───┼───┤   │
+             * │CTL│ Z │ X │ C │ V │ B │SFT│  <- Ряд 4 (QWERTY, с дополнительной кнопкой)
+             * ├───┼───┼───┼───┼───┼───┤   │
+             * │   │   │   │   │DEL│ESC│SFT│  <- Ряд 5 (островок)
+             * └───┴───┴───┴───┴───┴───┴───┘
+             *   1   2   3   4   5   6   7
+             */
+            bindings = <
+                &bootloader   &kp N1      &kp N2      &kp N3      &kp N4      &kp N5      &kp 6         &sys_reset    &kp N8      &kp N9      &kp N0      &kp MINUS   &kp EQUAL   &kp U
+                &sys_reset    &kp Q       &kp W       &kp E       &kp R       &kp T       &kp I         &kp Y         &kp U       &kp I       &kp O       &kp P       &kp LBKT    &kp RBKT
+                &kp LALT      &kp A       &kp S       &kp D       &kp F       &kp G       &kp L         &kp H         &kp J       &kp K       &kp L       &kp SEMI    &kp SQT     &kp U
+                &kp LCTRL     &kp Z       &kp X       &kp C       &kp V       &kp B       &kp M         &kp N         &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp U       &kp U
+                &kp ESC       &bt BT_CLR  &kp N3      &out OUT_TOG&bt BT_SEL 1&bt BT_SEL 0&kp LSHIFT    &bootloader   &kp U       &kp U       &kp U       &kp BSPC    &kp RET     &kp SPACE
+            >;
+        };
+    };
+};
