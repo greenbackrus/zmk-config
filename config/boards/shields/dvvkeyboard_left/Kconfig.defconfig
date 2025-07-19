@@ -1,6 +1,7 @@
 if SHIELD_DVVKEYB_LEFT
 
 config ZMK_DVVKEYB_LEFT
+    string
     default "DVV"
 config ZMK_SPLIT_ROLE_CENTRAL
     bool
@@ -10,6 +11,7 @@ endif
 if SHIELD_DVVKEYB_RIGHT
 
 config ZMK_DVVKEYB_RIGHT
+    string
     default "DVV_right"
 config ZMK_SPLIT
     bool
