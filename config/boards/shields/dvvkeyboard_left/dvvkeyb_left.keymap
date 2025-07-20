@@ -10,6 +10,8 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/behaviors.h>
+#include "dvvkeyb.dtsi" 
+
 &nice_view_oled {
     label = "nice_view";
 };
@@ -17,6 +19,7 @@
 / {
     keymap {
         compatible = "zmk,keymap";
+        transform = &keymap_transform0;
         default_layer {
             /*
              * Левая половинка клавиатуры (7x5)
