@@ -8,7 +8,7 @@
     };
     trans_right: default_transform {
         compatible = "zmk,matrix-transform";
-        columns = <14>;
+        columns = <7>;
         rows = <5>;
         map = <
             RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4) RC(0,5) RC(0,6)
