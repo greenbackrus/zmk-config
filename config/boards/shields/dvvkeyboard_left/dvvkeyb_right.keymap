@@ -14,7 +14,7 @@
 / {
     keymap {
         compatible = "zmk,keymap";
-        transform = &keymap_transform0;
+        transform = &default_transform;
 
         default_layer {
             /*
