@@ -43,7 +43,7 @@
                 &sys_reset                      &kp Q           &kp W     &kp E  		        &kp R     		            &kp T     	            &kp I
                 &kp LALT                        &kp A           &kp S     &kp D  		        &kp F     		            &kp G     	            &kp L
                 &kp LCTRL                       &kp Z           &kp X     &kp C  		        &kp V     		            &kp B     	            &kp M
-                &out OUT_USB                    &out OUT_BLE    &kp N3    &bt BT_CLR_ALL       	&bt BT_SEL 1                &bt BT_SEL 0            &kp LSHIFT
+                &out OUT_USB                    &out OUT_BLE    &kp N3    &bt BT_CLR_ALL       	&bt BT_SEL 3                &bt BT_SEL 5            &kp LSHIFT
             >;
         };
 
