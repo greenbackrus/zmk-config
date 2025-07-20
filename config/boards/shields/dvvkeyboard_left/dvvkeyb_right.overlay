@@ -5,7 +5,7 @@
 / {
     chosen {
         zmk,kscan = &kscan0;
-        /* zmk,physical-layout = &zmk_matrix_transform_default; */
+        zmk,physical-layout = &zmk_matrix_transform_default;
     };
 
     zmk,keyboard-id = "dvvkeyb_right";
