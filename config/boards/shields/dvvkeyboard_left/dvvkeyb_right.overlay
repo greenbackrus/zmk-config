@@ -35,7 +35,8 @@
             <&pro_micro 10 GPIO_ACTIVE_HIGH>;  // D15 - столбец 1 (TAB)
     };
 
-    default_transform: matrix_transform {
+    
+    &default_transform {
         col-offset = <7>;
     };
     zmk: zmk-config {
