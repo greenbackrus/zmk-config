@@ -36,6 +36,3 @@
         split-role = "right";  // или "right"
     };
 };
-&zmk_matrix_transform_default {
-    col-offset = <7>;
-};
