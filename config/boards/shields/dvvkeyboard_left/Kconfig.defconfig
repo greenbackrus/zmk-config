@@ -14,7 +14,8 @@ endif
 if SHIELD_DVVKEYB_RIGHT
 
 config ZMK_DVVKEYB_RIGHT
-
+    bool
+    default y
 config ZMK_SPLIT
     bool
     default y
