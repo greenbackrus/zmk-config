@@ -57,7 +57,7 @@
     chosen {
         zmk,kscan = &kscan0;
         zephyr,display = &nice_view_oled;
-        zmk,physical-layout = "default";
+        zmk,physical-layout = &default_transform;
     };
       zmk,keyboard-id = "dvvkeyb_left";
       zmk,layout = "default";
