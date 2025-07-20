@@ -14,5 +14,6 @@
     };
     chosen {
         zmk,physical-layout = &zmk_matrix_transform_default;
+        zmk,matrix-transform = &zmk_matrix_transform_default;
     };
 };
