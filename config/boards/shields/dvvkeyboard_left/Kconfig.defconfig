@@ -1,8 +1,10 @@
 if SHIELD_DVVKEYB_LEFT
 
 config ZMK_DVVKEYB_LEFT
+    bool
+    default y
     string
-    default "DVV1224"
+    default "tryit"
 config ZMK_SPLIT
     bool
     default y
