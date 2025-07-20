@@ -47,20 +47,12 @@
 };
 
 / {
-    usb_device {
-        product = "DVV Keyboard Left";
-        manufacturer = "Victor";
-        vid = <0x1209>;
-        pid = <0x0001>;
-    };
 
     chosen {
         zmk,kscan = &kscan0;
         zephyr,display = &nice_view_oled;
         zmk,physical-layout = &zmk_matrix_transform_default;
     };
-      zmk,keyboard-id = "dvvkeyb_left";
-
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";
@@ -91,9 +83,4 @@
         compatible = "zmk,config";
         split-role = "left";  // или "right"
     };
-    key_physical_attrs: key_physical_attrs {
-        compatible = "zmk,key-physical-attrs";
-        #key-cells = <7>;
-    };
-    
 };

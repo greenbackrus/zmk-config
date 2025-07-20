@@ -8,8 +8,6 @@
         zmk,physical-layout = &zmk_matrix_transform_default;
     };
 
-    zmk,keyboard-id = "dvvkeyb_right";
-
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";
