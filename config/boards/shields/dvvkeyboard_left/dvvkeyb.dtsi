@@ -1,6 +1,6 @@
 #include <dt-bindings/zmk/matrix_transform.h> // Put this with the other includes at the top of your dtsi
 / {
-    default_transform: keymap_transform0 {
+    zmk_matrix_transform_default: default_transform {
         compatible = "zmk,matrix-transform";
         columns = <14>;
         rows = <5>;
@@ -13,6 +13,6 @@
         >;
     };
     chosen {
-        zmk,physical-layout = &default_transform;
+        zmk,physical-layout = &zmk_matrix_transform_default;
     };
 };
