@@ -38,12 +38,6 @@
         prechargep = <0x22>;
     };
 };
-&zephyr_udc0 {
-    cdc_acm_uart {
-        compatible = "zephyr,cdc-acm-uart";
-        label = "CDC_ACM_0";
-    };
-};
 
 / {
 
