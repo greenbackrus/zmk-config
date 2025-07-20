@@ -1,8 +1,6 @@
 if SHIELD_DVVKEYB_LEFT
 
 config ZMK_DVVKEYB_LEFT
-    bool
-    default y
     string
     default "tryit"
 config ZMK_SPLIT
