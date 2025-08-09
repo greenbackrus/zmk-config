@@ -8,9 +8,7 @@
         zmk,physical-layout = &default_transform;
         zmk,matrix-transform = &default_transform;
     };
-    &default_transform {
-        col-offset = <7>;
-    };
+
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";
@@ -40,3 +38,6 @@
         split-role = "right";  // или "right"
     };
 };
+    &default_transform {
+        col-offset = <7>;
+    };
