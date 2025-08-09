@@ -43,7 +43,7 @@
                 &kp TAB       &kp Q           &kp W     &kp E  		        &kp R     		            &kp T     	            &kp I
                 &kp LCTRL     &kp A           &kp S     &kp D  		        &kp F     		            &kp G     	            &kp L
                 &kp ALT       &kp Z           &kp X     &kp C  		        &kp V     		            &kp B     	            &kp M
-                &kp BSPC      &kp DEL         &mo 3     &trans     	        &trans                      &trans                  &kp LSIFT
+                &kp BSPC      &kp DEL         &mo 2     &trans     	        &trans                      &trans                  &kp LSIFT
             >;
         };
 
