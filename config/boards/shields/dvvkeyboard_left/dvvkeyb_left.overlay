@@ -1,5 +1,7 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <physical_layouts.dtsi>
+#include <dvvkeyb.dtsi>
+
 
 &pinctrl {
     i2c1_default: i2c1_default {
