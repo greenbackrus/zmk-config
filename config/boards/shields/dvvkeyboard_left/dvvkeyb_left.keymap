@@ -44,10 +44,7 @@
                 &kp LCTRL &kp A  &kp S  &kp D  &kp F  &kp G  &kp L      &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT       &kp PLUS
                 &kp LALT  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp M      &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp MINUS     &kp U
                 &kp BSPC  &kp DEL &mo 2 &trans &trans &trans &kp LSHIFT &kp N1    &kp N2    &kp N3    &kp N4    &kp N5    &kp N6        &kp N7
-            >;
-        };
-
-        lower_layer {
+            >; {
             /*
              * ┌───┬───┬───┬───┬───┬───┬───┐
              * │   │   │   │   │   │   │   │
