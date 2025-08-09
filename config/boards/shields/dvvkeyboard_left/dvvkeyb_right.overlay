@@ -49,6 +49,3 @@
         split-role = "right";  // или "right"
     };
 };
-    &default_transform {
-        col-offset = <7>;
-    };
