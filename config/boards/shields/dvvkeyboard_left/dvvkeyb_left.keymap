@@ -18,7 +18,7 @@
 / {
     keymap {
         compatible = "zmk,keymap";
-        transform = &default_transform;
+        transform = &trans_left;
         default_layer {
             /*
              * Левая половинка клавиатуры (7x5)
