@@ -28,21 +28,21 @@
 
         /* 5 рядов: D5–D9 => P0.24, P1.00, P0.11, P1.04, P1.06 */
         row-gpios = 
-            <&pro_micro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  // D5
-            <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  // D6
-            <&pro_micro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  // D7
-            <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  // D8
-            <&pro_micro 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;  // D9
+            <&pro_micro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  // D5 - Ряд 0: TILDE N1 N2 N3 N4 N5 6 | N6 N7 N8 N9 N0 PIPE U
+            <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  // D6 - Ряд 1: TAB Q W E R T I | Y U I O P LBKT RBKT
+            <&pro_micro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  // D7 - Ряд 2: LCTRL A S D F G L | H J K L SEMI SQT PLUS
+            <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  // D8 - Ряд 3: LALT Z X C V B M | N M COMMA DOT FSLH MINUS RSHIFT
+            <&pro_micro 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;  // D9 - Ряд 4: BSPC DEL mo2 trans trans trans LSHIFT | N1 N2 N3 N4 N5 RETURN SPACE
 
         /* 7 столбцов: D10, D16, D14, D15, D18, D19, D20 */
         col-gpios = 
-            <&pro_micro 20 GPIO_ACTIVE_HIGH>,  // D20 - столбец 7 (пустой)
-            <&pro_micro 19 GPIO_ACTIVE_HIGH>,  // D19 - столбец 6 (T)
-            <&pro_micro 15 GPIO_ACTIVE_HIGH>,  // D18 - столбец 5 (R)
-            <&pro_micro 18 GPIO_ACTIVE_HIGH>,  // D10 - столбец 4 (E)
-            <&pro_micro 14 GPIO_ACTIVE_HIGH>,  // D14 - столбец 3 (W)
-            <&pro_micro 16 GPIO_ACTIVE_HIGH>,  // D16 - столбец 2 (Q)
-            <&pro_micro 10 GPIO_ACTIVE_HIGH>;  // D15 - столбец 1 (TAB)
+            <&pro_micro 20 GPIO_ACTIVE_HIGH>,  // D20 - Столбец 0: TILDE TAB LCTRL LALT BSPC | N6 Y H N N1
+            <&pro_micro 19 GPIO_ACTIVE_HIGH>,  // D19 - Столбец 1: N1 Q A Z DEL | N7 U J M N2
+            <&pro_micro 15 GPIO_ACTIVE_HIGH>,  // D15 - Столбец 2: N2 W S X mo2 | N8 I K COMMA N3
+            <&pro_micro 18 GPIO_ACTIVE_HIGH>,  // D18 - Столбец 3: N3 E D C trans | N9 O L DOT N4
+            <&pro_micro 14 GPIO_ACTIVE_HIGH>,  // D14 - Столбец 4: N4 R F V trans | N0 P SEMI FSLH N5
+            <&pro_micro 16 GPIO_ACTIVE_HIGH>,  // D16 - Столбец 5: N5 T G B trans | PIPE LBKT SQT MINUS RETURN
+            <&pro_micro 10 GPIO_ACTIVE_HIGH>;  // D10 - Столбец 6: 6 I L M LSHIFT | U RBKT PLUS RSHIFT SPACE
     };
 
     zmk: zmk-config {
