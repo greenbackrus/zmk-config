@@ -21,67 +21,87 @@
         transform = &trans_left;
         default_layer {
             /*
-             * Левая половинка клавиатуры (7x5)
-             * Столбцы: 1-7 (от центра к краям)
-             * Ряды: 1-5 (сверху вниз)
+             * Левая половинка клавиатуры (7x4 + островок 7x1)
+             * Столбцы: 0-13 (14 столбцов)
+             * Ряды: 0-4 (5 рядов)
              * 
              * ┌───┬───┬───┬───┬───┬───┬───┐
-             * │ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │   │  <- Ряд 1
-             * ├───┼───┼───┼───┼───┼───┤   │
-             * │TAB│ Q │ W │ E │ R │ T │   │  <- Ряд 2 (QWERTY)
-             * ├───┼───┼───┼───┼───┼───┤   │
-             * │ALT│ A │ S │ D │ F │ G │   │  <- Ряд 3 (QWERTY)
-             * ├───┼───┼───┼───┼───┼───┤   │
-             * │CTL│ Z │ X │ C │ V │ B │SFT│  <- Ряд 4 (QWERTY, с дополнительной кнопкой)
-             * ├───┼───┼───┼───┼───┼───┤   │
-             * │   │   │   │   │DEL│ESC│SFT│  <- Ряд 5 (островок)
+             * │~  │ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │  <- Ряд 0
+             * ├───┼───┼───┼───┼───┼───┼───┤
+             * │TAB│ Q │ W │ E │ R │ T │ I │  <- Ряд 1 (QWERTY)
+             * ├───┼───┼───┼───┼───┼───┼───┤
+             * │CTL│ A │ S │ D │ F │ G │ L │  <- Ряд 2 (QWERTY)
+             * ├───┼───┼───┼───┼───┼───┼───┤
+             * │ALT│ Z │ X │ C │ V │ B │ M │  <- Ряд 3 (QWERTY)
              * └───┴───┴───┴───┴───┴───┴───┘
-             *   1   2   3   4   5   6   7
+             * 
+             * ┌───┬───┬───┬───┬───┬───┬───┐
+             * │BSP│DEL│mo2│   │   │   │SFT│  <- Ряд 4 (островок)
+             * └───┴───┴───┴───┴───┴───┴───┘
+             * 
+             * Правая часть (столбцы 7-13):
+             * ┌───┬───┬───┬───┬───┬───┬───┐
+             * │ 6 │ 7 │ 8 │ 9 │ 0 │ | │ U │
+             * ├───┼───┼───┼───┼───┼───┼───┤
+             * │ Y │ U │ I │ O │ P │ [ │ ] │
+             * ├───┼───┼───┼───┼───┼───┼───┤
+             * │ H │ J │ K │ L │ ; │ ' │ + │
+             * ├───┼───┼───┼───┼───┼───┼───┤
+             * │ N │ M │ , │ . │ / │ - │ U │
+             * └───┴───┴───┴───┴───┴───┴───┘
+             * 
+             * ┌───┬───┬───┬───┬───┬───┬───┐
+             * │ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │ 7 │  <- Островок (правая часть)
+             * └───┴───┴───┴───┴───┴───┴───┘
              */
             bindings = <
-                &kp TILDE &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp 6      &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &kp PIPE      &kp U
-                &kp TAB   &kp Q  &kp W  &kp E  &kp R  &kp T  &kp I      &kp Y     &kp U     &kp I     &kp O     &kp P     &kp LBKT      &kp RBKT
-                &kp LCTRL &kp A  &kp S  &kp D  &kp F  &kp G  &kp L      &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT       &kp PLUS
-                &kp LALT  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp M      &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp MINUS     &kp U
-                &kp BSPC  &kp DEL &mo 2 &trans &trans &trans &kp LSHIFT &kp N1    &kp N2    &kp N3    &kp N4    &kp N5    &kp N6        &kp N7
+                &kp TILDE &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp 6          &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &kp PIPE      &kp U
+                &kp TAB   &kp Q  &kp W  &kp E  &kp R  &kp T  &kp I          &kp Y     &kp U     &kp I     &kp O     &kp P     &kp LBKT      &kp RBKT
+                &kp LCTRL &kp A  &kp S  &kp D  &kp F  &kp G  &kp L          &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT       &kp PLUS
+                &kp LALT  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp M          &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp MINUS     &kp U
+                &kp BSPC  &kp DEL &mo 2 &trans &trans &trans &kp LSHIFT     &kp PG_DN    &kp PG_UP    &kp N3    &kp N4    &kp N5    &kp RETURN    &kp SPACE
             >; 
         };
 
         lower_layer {
             /*
              * ┌───┬───┬───┬───┬───┬───┬───┐
-             * │   │   │   │   │   │   │   │
-             * ├───┼───┼───┼───┼───┼───┤   │
-             * │ESC│ 1 │ 2 │ 3 │ 4 │ 5 │   │
-             * ├───┼───┼───┼───┼───┼───┤   │
-             * │   │ - │ = │ [ │ ] │ \ │   │
-             * ├───┼───┼───┼───┼───┼───┤   │
-             * │   │ESC│GUI│CPY│PST│   │   │
-             * ├───┼───┼───┼───┼───┼───┤   │
-             * │   │   │   │   │   │   │   │
+             * │   │   │   │   │   │   │   │  <- Ряд 0
+             * ├───┼───┼───┼───┼───┼───┼───┤
+             * │ESC│ 1 │ 2 │ 3 │ 4 │ 5 │   │  <- Ряд 1
+             * ├───┼───┼───┼───┼───┼───┼───┤
+             * │   │ - │ = │ [ │ ] │ \ │   │  <- Ряд 2
+             * ├───┼───┼───┼───┼───┼───┼───┤
+             * │   │ESC│GUI│CPY│PST│   │   │  <- Ряд 3
+             * └───┴───┴───┴───┴───┴───┴───┘
+             * 
+             * ┌───┬───┬───┬───┬───┬───┬───┐
+             * │   │   │   │   │   │   │   │  <- Островок
              * └───┴───┴───┴───┴───┴───┴───┘
              */
             bindings = <
-                &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
-                &kp ESC &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &trans      &trans &trans &trans &trans &trans &trans &trans
-                &trans &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &kp BSLH &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &kp ESC &kp LGUI &kp LG(C) &kp LG(V) &kp GRAVE &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans &trans            &trans &trans &trans &trans &trans &trans &trans
+                &kp ESC &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &trans           &trans &trans &trans &trans &trans &trans &trans
+                &trans &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &kp BSLH       &trans &trans &trans &trans &trans &trans &trans &trans
+                &trans &kp ESC &kp LGUI &kp LG(C) &kp LG(V) &kp GRAVE       &trans &trans &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans &trans &trans
             >;
         };
 
         raise_layer {
             /*
              * ┌───┬───┬───┬───┬───┬───┬───┐
-             * │   │   │   │   │   │   │   │
-             * ├───┼───┼───┼───┼───┼───┤   │
-             * │ESC│ ! │ @ │ # │ $ │ % │   │
-             * ├───┼───┼───┼───┼───┼───┤   │
-             * │   │ _ │ + │ { │ } │ | │   │
-             * ├───┼───┼───┼───┼───┼───┤   │
-             * │   │ESC│GUI│ ( │ ) │ ~ │   │
-             * ├───┼───┼───┼───┼───┼───┤   │
-             * │   │   │   │   │   │   │   │
+             * │BOOT│   │   │   │   │   │   │  <- Ряд 0
+             * ├───┼───┼───┼───┼───┼───┼───┤
+             * │RST│ ! │ @ │ # │ $ │ % │   │  <- Ряд 1
+             * ├───┼───┼───┼───┼───┼───┼───┤
+             * │   │ _ │ + │ { │ } │ | │   │  <- Ряд 2
+             * ├───┼───┼───┼───┼───┼───┼───┤
+             * │   │ESC│GUI│ ( │ ) │ ~ │   │  <- Ряд 3
+             * └───┴───┴───┴───┴───┴───┴───┘
+             * 
+             * ┌───┬───┬───┬───┬───┬───┬───┐
+             * │BLE│   │   │BT2│BT1│BT0│USB│  <- Островок
              * └───┴───┴───┴───┴───┴───┴───┘
              */
             bindings = <
