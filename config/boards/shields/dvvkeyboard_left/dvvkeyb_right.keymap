@@ -161,8 +161,8 @@
              */
             bindings = <
                 &bootloader &trans &trans &trans &trans &trans &trans           &bootloader &trans &trans &trans &trans &trans &trans
-                &sys_reset &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT &trans   &sys_reset &trans &trans &trans &trans &trans &trans
-                &trans &kp UNDER &kp PLUS &kp LBRC &kp RBRC &kp PIPE &trans     &trans &trans &trans &trans &trans &trans &trans
+                &sys_reset &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT &trans   &sys_reset &trans &kp UP &trans &trans &trans &trans
+                &trans &kp UNDER &kp PLUS &kp LBRC &kp RBRC &kp PIPE &trans     &trans &kp LEFT &kp DOWN &kp RIGHT &trans &trans &trans
                 &trans &kp ESC &kp LGUI &kp LPAR &kp RPAR &kp TILDE &trans      &trans &trans &trans &trans &trans &trans &trans
                 &out OUT_BLE &trans &trans &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0 &out OUT_USB  &trans &trans &trans &trans &trans &trans &trans
             >;
