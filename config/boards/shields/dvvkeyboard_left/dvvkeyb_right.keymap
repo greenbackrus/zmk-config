@@ -1,3 +1,4 @@
+ 
 /*
  * Copyright (c) 2021 The ZMK Contributors
  *
@@ -39,8 +40,8 @@
              * │ 6 │ 7 │ 8 │ 9 │ 0 │ | │ U │
              * ├───┼───┼───┼───┼───┼───┼───┤
              * │ Y │ U │ I │ O │ P │ [ │ ] │
-             * ├───┼───┼───┼───┼───┼───┼───┤
-             * │ H │ J │ K │ L │ ; │ ' │ + │
+              * ├───┼───┼───┼───┼───┼───┼───┤
+               * │ H │ J │ K │ L │ ; │ ' │ + │
              * ├───┼───┼───┼───┼───┼───┼───┤
              * │ N │ M │ , │ . │ / │ - │SFT│
              * └───┴───┴───┴───┴───┴───┴───┘
@@ -58,7 +59,7 @@
             >;
         };
 
-        lower_layer {
+       lower_layer {
             /*
              * ┌───┬───┬───┬───┬───┬───┬───┐
              * │   │   │   │   │   │   │   │  <- Ряд 0
@@ -73,13 +74,28 @@
              * ┌───┬───┬───┬───┬───┬───┬───┐
              * │   │   │   │   │   │   │   │  <- Островок
              * └───┴───┴───┴───┴───┴───┴───┘
+             * 
+             * Правая часть (столбцы 7-13):
+             * ┌───┬───┬───┬───┬───┬───┬───┐
+             * │   │   │   │   │   │   │   │
+             * ├───┼───┼───┼───┼───┼───┼───┤
+             * │   │   │UP │   │   │   │   │
+             * ├───┼───┼───┼───┼───┼───┼───┤
+             * │   │LFT│DWN│RGT│   │   │   │
+             * ├───┼───┼───┼───┼───┼───┼───┤
+             * │   │   │   │   │   │   │   │
+             * └───┴───┴───┴───┴───┴───┴───┘
+             * 
+             * ┌───┬───┬───┬───┬───┬───┬───┐
+             * │   │   │   │   │   │   │   │  <- Островок (правая часть)
+             * └───┴───┴───┴───┴───┴───┴───┘
              */
             bindings = <
-                &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
-                &kp ESC &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &trans      &trans &trans &trans &trans &trans &trans &trans
-                &trans &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &kp BSLH &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &kp ESC &kp LGUI &kp LG(C) &kp LG(V) &kp GRAVE &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans &trans            &trans &trans &trans &trans &trans &trans &trans
+                &kp ESC &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &trans           &trans &trans &kp UP &trans &trans &trans &trans
+                &trans &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &kp BSLH       &trans &kp LEFT &kp DOWN &kp RIGHT &trans &trans &trans &trans
+                &trans &kp ESC &kp LGUI &kp LG(C) &kp LG(V) &kp GRAVE       &trans &trans &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans &trans &trans
             >;
         };
 
@@ -98,6 +114,50 @@
              * ┌───┬───┬───┬───┬───┬───┬───┐
              * │BLE│   │   │BT2│BT1│BT0│USB│  <- Островок
              * └───┴───┴───┴───┴───┴───┴───┘
+             * 
+             * Правая часть (столбцы 7-13):
+             * ┌───┬───┬───┬───┬───┬───┬───┐
+             * │BOOT│   │   │   │   │   │   │
+             * ├───┼───┼───┼───┼───┼───┼───┤
+             * │RST│   │   │   │   │   │   │
+             * ├───┼───┼───┼───┼───┼───┼───┤
+             * │   │   │   │   │   │   │   │
+             * ├───┼───┼───┼───┼───┼───┼───┤
+             * │   │   │   │   │   │   │   │
+             * └───┴───┴───┴───┴───┴───┴───┘
+             * 
+             * ┌───┬───┬───┬───┬───┬───┬───┐
+             * │   │   │   │   │   │   │   │  <- Островок (правая часть)
+             * └───┴───┴───┴───┴───┴───┴───┘
+             * 
+             * ОСТРОВКИ (отдельно):
+             * 
+             * Левая половинка (островок):
+             * ┌───┬───┬───┬───┬───┬───┬───┐
+             * │BSP│DEL│mo2│   │   │   │SFT│  <- Default layer
+             * └───┴───┴───┴───┴───┴───┴───┘
+             * 
+             * ┌───┬───┬───┬───┬───┬───┬───┐
+             * │   │   │   │   │   │   │   │  <- Lower layer
+
+             * └───┴───┴───┴───┴───┴───┴───┘
+             * 
+             * ┌───┬───┬───┬───┬───┬───┬───┐
+             * │BLE│   │   │BT2│BT1│BT0│USB│  <- Raise layer
+             * └───┴───┴───┴───┴───┴───┴───┘
+             * 
+             * Правая половинка (островок):
+             * ┌───┬───┬───┬───┬───┬───┬───┐
+             * │ 1 │ 2 │ 3 │ 4 │ 5 │ENT│SPC│  <- Default layer
+             * └───┴───┴───┴───┴───┴───┴───┘
+             * 
+             * ┌───┬───┬───┬───┬───┬───┬───┐
+             * │   │   │   │   │   │   │   │  <- Lower layer
+             * └───┴───┴───┴───┴───┴───┴───┘
+             * 
+             * ┌───┬───┬───┬───┬───┬───┬───┐
+             * │   │   │   │   │   │   │   │  <- Raise layer
+             * └───┴───┴───┴───┴───┴───┴───┘
              */
             bindings = <
                 &bootloader &trans &trans &trans &trans &trans &trans           &bootloader &trans &trans &trans &trans &trans &trans
@@ -109,3 +169,16 @@
         };
     };
 };
+   
+
+
+
+
+
+
+
+
+
+
+
+n````````````````````````````````````````````````````````````````````````````````````````````````````````
