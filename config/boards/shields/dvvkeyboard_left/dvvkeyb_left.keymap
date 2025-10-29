@@ -15,7 +15,24 @@
 &nice_view_oled {
     label = "nice_view";
 };
-
+/ {
+    macros {
+        type_password {
+            compatible = "zmk,behavior-macro";
+            label = "TYPE_PASSWORD";
+            bindings = <
+                &macro_tap &kp LS(P)     // P
+                &macro_tap &kp LS(LBKT)  // @  (Shift + 2 на US QWERTY)
+                &macro_tap &kp LS(DLR)   // $
+                &macro_tap &kp LS(DLR)   // $
+                &macro_tap &kp W         // w
+                &macro_tap &kp 0         // 0
+                &macro_tap &kp R         // r
+                &macro_tap &kp D         // d
+            >;
+        };
+    };
+};
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -165,7 +182,7 @@
              */
             bindings = <
                 &bootloader &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F1           &kp F6  &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &trans
-                &sys_reset &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT &trans   &sys_reset   &trans &kp UP &trans &trans &trans &trans
+                &sys_reset &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT &trans   &sys_reset   &trans &kp UP &trans &type_password &trans &trans
                 &trans &kp UNDER &kp PLUS &kp LBRC &kp RBRC &kp PIPE &trans     &bootloader       &kp LEFT &kp DOWN &kp RIGHT  &trans &trans &trans
                 &trans &kp ESC &kp LGUI &kp LPAR &kp RPAR &kp TILDE &trans      &trans       &trans &trans &trans &trans &trans &trans
                 &out OUT_BLE &trans &out OUT_USB &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0 &kp CAPS     &trans &trans &trans &trans &trans &trans &trans
