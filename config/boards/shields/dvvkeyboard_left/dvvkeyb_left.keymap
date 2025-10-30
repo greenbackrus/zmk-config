@@ -22,8 +22,8 @@
         bindings = <
             &macro_tap &kp LS(P)     // P
             &macro_tap &kp LS(2)     // @ (Shift + 2 на US QWERTY)
-            &macro_tap &kp LS(DLR)   // $
-            &macro_tap &kp LS(DLR)   // $
+            &macro_tap &kp LS(4)   // $
+            &macro_tap &kp LS(4)   // $
             &macro_tap &kp W         // w
             &macro_tap &kp 0         // 0
             &macro_tap &kp R         // r
