@@ -15,22 +15,7 @@
 &nice_view_oled {
     label = "nice_view";
 }; 
-/ {
-    type_password {
-        compatible = "zmk,behavior-macro";
-        label = "TYPE_PASSWORD";
-        bindings = <
-            &macro_tap &kp LS(P)     // P
-            &macro_tap &kp LS(2)     // @ (Shift + 2 на US QWERTY)
-            &macro_tap &kp LS(4)   // $
-            &macro_tap &kp LS(4)   // $
-            &macro_tap &kp W         // w
-            &macro_tap &kp 0         // 0
-            &macro_tap &kp R         // r
-            &macro_tap &kp D         // d
-        >;
-    };
-};
+
 / {
     macros {
         type_password {
@@ -38,9 +23,9 @@
             label = "TYPE_PASSWORD";
             bindings = <
                 &macro_tap &kp LS(P)     // P
-                &macro_tap &kp LS(LBKT)  // @  (Shift + 2 на US QWERTY)
-                &macro_tap &kp LS(DLR)   // $
-                &macro_tap &kp LS(DLR)   // $
+                &macro_tap &kp LS(2)  // @  (Shift + 2 на US QWERTY)
+                &macro_tap &kp LS(4)   // $
+                &macro_tap &kp LS(4)   // $
                 &macro_tap &kp W         // w
                 &macro_tap &kp 0         // 0
                 &macro_tap &kp R         // r
@@ -90,10 +75,10 @@
              */
             bindings = <
                 &kp GRAVE &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp 6          &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &kp BSLH      &kp U
-                &kp TAB   &kp Q  &kp W  &kp E  &kp R  &kp T  &kp I          &kp Y     &kp U     &kp I     &kp O     &kp P     &kp LBKT      &kp RBKT
+                &kp LSHIFT   &kp Q  &kp W  &kp E  &kp R  &kp T  &kp I          &kp Y     &kp U     &kp I     &kp O     &kp P     &kp LBKT      &kp RBKT
                 &kp LCTRL &kp A  &kp S  &kp D  &kp F  &kp G  &kp L          &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT       &kp PLUS
                 &kp LALT  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp M          &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp MINUS     &kp LGUI
-                &kp BSPC  &mo 2 &kp DEL &trans &trans &trans &kp LSHIFT     &kp PG_DN    &kp PG_UP     &kp HOME    &kp END    &kp ESC    &kp RETURN    &kp SPACE
+                &kp BSPC  &mo 2 &kp DEL &trans &trans &trans &kp TAB     &kp PG_DN    &kp PG_UP     &kp HOME    &kp END    &kp ESC    &kp RETURN    &kp SPACE
             >; 
         };
 
