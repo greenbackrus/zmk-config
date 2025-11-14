@@ -181,7 +181,7 @@
                 &bootloader &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F1           &kp F6  &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &trans
                 &sys_reset &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT &trans   &sys_reset   &trans &kp UP &trans &type_pass &trans &trans
                 &trans &kp UNDER &kp PLUS &kp LBRC &kp RBRC &kp PIPE &trans     &bootloader  &kp LEFT &kp DOWN &kp RIGHT  &trans &trans &trans
-                &CAPS &kp ESC &kp LGUI &kp LPAR &kp RPAR &kp TILDE &trans       &trans &trans &trans &trans &trans &trans &trans
+                &kp CAPS &kp ESC &kp LGUI &kp LPAR &kp RPAR &kp TILDE &trans       &trans &trans &trans &trans &trans &trans &trans
                 &out OUT_BLE &trans &out OUT_USB &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0   &trans &trans &trans &trans &trans &trans &kp ESC &kp BSPC
             >;
         };
